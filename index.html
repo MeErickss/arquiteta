@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosetto Arquitetura</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__logo">
+      <span class="nav__logo-name">ROSETTO</span>
+      <span class="nav__logo-sub">ARQUITETURA</span>
+    </div>
+    <nav class="nav__links">
+      <a href="#sobre">Sobre</a>
+      <a href="#valores">Valores</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#processo">Processo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre" class="mobile-menu__link">Sobre</a>
+    <a href="#valores" class="mobile-menu__link">Valores</a>
+    <a href="#portfolio" class="mobile-menu__link">Portfólio</a>
+    <a href="#processo" class="mobile-menu__link">Processo</a>
+    <a href="#contato" class="mobile-menu__link">Contato</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg-circle"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">criar · projetar · transformar</p>
+      <h1 class="hero__title reveal">
+        <span class="hero__title-main">ROSETTO</span>
+        <span class="hero__title-sub">ARQUITETURA</span>
+      </h1>
+      <div class="hero__divider reveal">
+        <span class="hero__heart">♥</span>
+      </div>
+      <p class="hero__tagline reveal">
+        <em>projetos que acolhem, inspiram e transformam.</em>
+      </p>
+      <a href="#sobre" class="btn btn--outline reveal">Conheça nosso trabalho</a>
+    </div>
+    <div class="hero__sketch reveal">
+      <!-- Submarca R + casa -->
+      <div class="hero__submarca" aria-hidden="true">
+        <svg viewBox="0 0 130 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Casa ao fundo -->
+          <path d="M65 12 L112 46 L112 138 L18 138 L18 46 Z" stroke="#C9A84C" stroke-width="1.4" fill="none" opacity="0.4"/>
+          <!-- Detalhe janela casa -->
+          <rect x="50" y="82" width="30" height="35" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.3"/>
+          <line x1="65" y1="82" x2="65" y2="117" stroke="#C9A84C" stroke-width="0.7" opacity="0.3"/>
+          <!-- Ramo botânico esquerdo -->
+          <line x1="23" y1="62" x2="23" y2="95" stroke="#C9A84C" stroke-width="1"/>
+          <path d="M23 83 Q13 74 17 63" stroke="#C9A84C" stroke-width="0.9" fill="none"/>
+          <path d="M23 74 Q33 67 29 57" stroke="#C9A84C" stroke-width="0.9" fill="none"/>
+          <circle cx="17" cy="63" r="2.2" fill="#C9A84C"/>
+          <circle cx="29" cy="57" r="2.2" fill="#C9A84C"/>
+          <!-- Grande R -->
+          <text x="26" y="128"
+                font-family="'Cormorant Garamond','Georgia',serif"
+                font-size="108"
+                font-weight="400"
+                fill="#3D3730"
+                opacity="0.88">R</text>
+          <!-- Coração -->
+          <text x="65" y="148" text-anchor="middle" font-size="10" fill="#C9A84C">♥</text>
+        </svg>
+      </div>
+
+      <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" class="arch-sketch">
+        <!-- Ground line -->
+        <line x1="40" y1="300" x2="440" y2="300" stroke="#A79F92" stroke-width="1.2"/>
+        <!-- Main structure columns -->
+        <line x1="100" y1="300" x2="100" y2="120" stroke="#A79F92" stroke-width="1.2"/>
+        <line x1="200" y1="300" x2="200" y2="100" stroke="#A79F92" stroke-width="1.2"/>
+        <line x1="300" y1="300" x2="300" y2="100" stroke="#A79F92" stroke-width="1.2"/>
+        <line x1="380" y1="300" x2="380" y2="120" stroke="#A79F92" stroke-width="1.2"/>
+        <!-- Roof beams -->
+        <line x1="80" y1="120" x2="400" y2="120" stroke="#A79F92" stroke-width="1.2"/>
+        <line x1="80" y1="100" x2="400" y2="100" stroke="#A79F92" stroke-width="1.2"/>
+        <!-- Horizontal beams -->
+        <line x1="100" y1="180" x2="380" y2="180" stroke="#A79F92" stroke-width="0.8"/>
+        <line x1="100" y1="240" x2="380" y2="240" stroke="#A79F92" stroke-width="0.8"/>
+        <!-- Roof overhang detail -->
+        <line x1="60" y1="110" x2="420" y2="110" stroke="#C9A84C" stroke-width="1"/>
+        <!-- Window panes suggestion -->
+        <rect x="120" y="200" width="40" height="50" stroke="#A79F92" stroke-width="0.7" fill="none" opacity="0.6"/>
+        <rect x="175" y="200" width="40" height="50" stroke="#A79F92" stroke-width="0.7" fill="none" opacity="0.6"/>
+        <rect x="230" y="200" width="40" height="50" stroke="#A79F92" stroke-width="0.7" fill="none" opacity="0.6"/>
+        <rect x="285" y="200" width="40" height="50" stroke="#A79F92" stroke-width="0.7" fill="none" opacity="0.6"/>
+        <!-- Cross beams roof -->
+        <line x1="140" y1="100" x2="140" y2="120" stroke="#A79F92" stroke-width="0.8"/>
+        <line x1="180" y1="100" x2="180" y2="120" stroke="#A79F92" stroke-width="0.8"/>
+        <line x1="220" y1="100" x2="220" y2="120" stroke="#A79F92" stroke-width="0.8"/>
+        <line x1="260" y1="100" x2="260" y2="120" stroke="#A79F92" stroke-width="0.8"/>
+        <line x1="340" y1="100" x2="340" y2="120" stroke="#A79F92" stroke-width="0.8"/>
+        <!-- Sun/circle bg -->
+        <circle cx="370" cy="70" r="45" stroke="#F6E7A6" stroke-width="1" fill="#F6E7A6" opacity="0.5"/>
+        <!-- Plant left -->
+        <line x1="65" y1="300" x2="65" y2="240" stroke="#A79F92" stroke-width="1"/>
+        <path d="M65 260 Q45 240 55 220" stroke="#A79F92" stroke-width="0.8" fill="none"/>
+        <path d="M65 250 Q85 235 75 210" stroke="#A79F92" stroke-width="0.8" fill="none"/>
+        <path d="M65 240 Q50 225 60 205" stroke="#A79F92" stroke-width="0.8" fill="none"/>
+        <!-- Plant right -->
+        <line x1="415" y1="300" x2="415" y2="250" stroke="#A79F92" stroke-width="1"/>
+        <path d="M415 270 Q395 255 405 235" stroke="#A79F92" stroke-width="0.8" fill="none"/>
+        <path d="M415 260 Q430 248 425 228" stroke="#A79F92" stroke-width="0.8" fill="none"/>
+        <!-- Gold accent line -->
+        <path d="M80 316 Q240 308 400 316" stroke="#C9A84C" stroke-width="1" fill="none"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="sobre__grid">
+        <div class="sobre__text reveal">
+          <p class="section-label">Sobre nós</p>
+          <h2 class="section-title">Arquitetura é mais que desenhar.</h2>
+          <p class="sobre__lead">É sobre realizar sonhos e transformar vidas.</p>
+          <p class="sobre__body">
+            Na Rosetto Arquitetura, cada projeto nasce de uma escuta genuína.
+            Acreditamos que o espaço em que você vive molda quem você é —
+            por isso criamos ambientes com intenção, beleza e propósito.
+          </p>
+          <p class="sobre__body">
+            Da concepção ao acabamento, nossa equipe acompanha cada etapa
+            com disciplina, criatividade e profundo cuidado com os detalhes.
+          </p>
+          <div class="sobre__tags">
+            <span>Disciplina</span>
+            <span>Criatividade</span>
+            <span>Foco</span>
+            <span>Sensibilidade</span>
+            <span>Planejamento</span>
+            <span>Transformação</span>
+          </div>
+        </div>
+        <div class="sobre__visual reveal">
+          <div class="sobre__card">
+            <div class="sobre__stat">
+              <span class="sobre__stat-num">+120</span>
+              <span class="sobre__stat-label">Projetos entregues</span>
+            </div>
+            <div class="sobre__stat">
+              <span class="sobre__stat-num">8</span>
+              <span class="sobre__stat-label">Anos de experiência</span>
+            </div>
+            <div class="sobre__stat">
+              <span class="sobre__stat-num">100%</span>
+              <span class="sobre__stat-label">Clientes satisfeitos</span>
+            </div>
+          </div>
+          <blockquote class="sobre__quote">
+            <p>"Arquitetura com intenção, que melhora vidas e cria histórias."</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="valores" id="valores">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Nossos pilares</p>
+        <h2 class="section-title">O que nos guia</h2>
+      </div>
+      <div class="valores__grid">
+
+        <div class="valor-card reveal">
+          <div class="valor-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 38 L24 12 L42 38" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+              <rect x="16" y="26" width="16" height="12" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+              <line x1="24" y1="26" x2="24" y2="38" stroke="#C9A84C" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Arquitetura</h3>
+          <p>Soluções criativas e funcionais que transformam sonhos em realidade.</p>
+        </div>
+
+        <div class="valor-card reveal">
+          <div class="valor-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 40 L8 20 Q8 16 12 16 L36 16 Q40 16 40 20 L40 40" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+              <path d="M14 16 Q14 8 24 8 Q34 8 34 16" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+              <line x1="4" y1="40" x2="44" y2="40" stroke="#C9A84C" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Acolhimento</h3>
+          <p>Espaços pensados para o bem-estar, onde cada detalhe faz você se sentir em casa.</p>
+        </div>
+
+        <div class="valor-card reveal">
+          <div class="valor-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="14" width="32" height="24" rx="3" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+              <line x1="16" y1="14" x2="16" y2="38" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M20 22 Q24 18 28 22 Q32 26 28 30 Q24 34 20 30 Q16 26 20 22Z" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <h3>Conforto</h3>
+          <p>Ambientes que unem beleza e praticidade para o seu dia a dia.</p>
+        </div>
+
+        <div class="valor-card reveal">
+          <div class="valor-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 40 Q10 30 10 20 Q10 12 18 12 Q22 12 24 16 Q26 12 30 12 Q38 12 38 20 Q38 30 24 40Z" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <h3>Propósito</h3>
+          <p>Arquitetura com intenção, que melhora vidas e cria histórias.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Nossos projetos</p>
+        <h2 class="section-title">Portfólio</h2>
+      </div>
+      <div class="portfolio__filter reveal">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="residencial">Residencial</button>
+        <button class="filter-btn" data-filter="comercial">Comercial</button>
+        <button class="filter-btn" data-filter="interiores">Interiores</button>
+      </div>
+      <div class="portfolio__grid">
+
+        <div class="portfolio-card reveal" data-category="residencial">
+          <div class="portfolio-card__img portfolio-card__img--1">
+            <div class="portfolio-card__overlay">
+              <span>Casa Contemporânea</span>
+              <small>Residencial · São Paulo</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card reveal" data-category="interiores">
+          <div class="portfolio-card__img portfolio-card__img--2">
+            <div class="portfolio-card__overlay">
+              <span>Sala Living Serena</span>
+              <small>Interiores · Campinas</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card reveal" data-category="interiores">
+          <div class="portfolio-card__img portfolio-card__img--3">
+            <div class="portfolio-card__overlay">
+              <span>Suíte Master</span>
+              <small>Interiores · Santos</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card reveal" data-category="residencial">
+          <div class="portfolio-card__img portfolio-card__img--4">
+            <div class="portfolio-card__overlay">
+              <span>Planta Aberta</span>
+              <small>Residencial · Florianópolis</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card reveal" data-category="comercial">
+          <div class="portfolio-card__img portfolio-card__img--5">
+            <div class="portfolio-card__overlay">
+              <span>Fachada Minimalista</span>
+              <small>Comercial · São Paulo</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card reveal" data-category="interiores">
+          <div class="portfolio-card__img portfolio-card__img--6">
+            <div class="portfolio-card__overlay">
+              <span>Escritório Home</span>
+              <small>Interiores · Curitiba</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FRASE DESTAQUE -->
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-section__inner reveal">
+        <p class="quote-section__text">
+          "Cada espaço tem uma história a contar.<br>
+          <em>Deixa a gente contar a sua.</em>"
+        </p>
+        <span class="quote-section__heart">♥</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="processo" id="processo">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Como trabalhamos</p>
+        <h2 class="section-title">Nosso processo</h2>
+      </div>
+      <div class="processo__steps">
+
+        <div class="step reveal">
+          <div class="step__number">01</div>
+          <div class="step__content">
+            <h3>Escuta & Briefing</h3>
+            <p>Tudo começa em entender você. Sua rotina, seus sonhos, seu estilo de vida. Esse encontro é o alicerce de tudo.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__number">02</div>
+          <div class="step__content">
+            <h3>Conceito & Partido</h3>
+            <p>Desenvolvemos o conceito criativo que guiará cada decisão do projeto — forma, luz, materiais e emoção.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__number">03</div>
+          <div class="step__content">
+            <h3>Projeto & Detalhamento</h3>
+            <p>Plantas, cortes, elevações e perspectivas 3D. Cada detalhe pensado antes de qualquer obra começar.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__number">04</div>
+          <div class="step__content">
+            <h3>Acompanhamento de Obra</h3>
+            <p>Presença constante para garantir que cada linha do projeto se torne realidade com fidelidade e qualidade.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__number">05</div>
+          <div class="step__content">
+            <h3>Entrega & Pós-obra</h3>
+            <p>Seu novo espaço entregue com cuidado. E nossa relação não termina aqui — seguimos junto depois da entrega.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depoimentos">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">O que dizem</p>
+        <h2 class="section-title">Depoimentos</h2>
+      </div>
+      <div class="depoimentos__track" id="depoimentosTrack">
+
+        <div class="depoimento-card">
+          <p>"A Rosetto transformou nosso apartamento em um lar de verdade. Cada detalhe foi pensado com muito carinho e profissionalismo."</p>
+          <div class="depoimento-card__author">
+            <span class="depoimento-card__name">Ana & Pedro Souza</span>
+            <span class="depoimento-card__proj">Apartamento · São Paulo</span>
+          </div>
+          <div class="depoimento-card__stars">★★★★★</div>
+        </div>
+
+        <div class="depoimento-card">
+          <p>"Nunca imaginei que meu escritório poderia ser tão funcional e ao mesmo tempo tão bonito. Resultado incrível!"</p>
+          <div class="depoimento-card__author">
+            <span class="depoimento-card__name">Carla Mendes</span>
+            <span class="depoimento-card__proj">Home Office · Campinas</span>
+          </div>
+          <div class="depoimento-card__stars">★★★★★</div>
+        </div>
+
+        <div class="depoimento-card">
+          <p>"Do primeiro encontro à entrega, nos sentimos acolhidos e seguros. A equipe superou todas as nossas expectativas."</p>
+          <div class="depoimento-card__author">
+            <span class="depoimento-card__name">Família Rodrigues</span>
+            <span class="depoimento-card__proj">Casa · Florianópolis</span>
+          </div>
+          <div class="depoimento-card__stars">★★★★★</div>
+        </div>
+
+        <div class="depoimento-card">
+          <p>"O projeto trouxe elegância e funcionalidade que eu nem sabia que eram possíveis no meu espaço. Recomendo demais!"</p>
+          <div class="depoimento-card__author">
+            <span class="depoimento-card__name">Márcia Oliveira</span>
+            <span class="depoimento-card__proj">Sala de Estar · Santos</span>
+          </div>
+          <div class="depoimento-card__stars">★★★★★</div>
+        </div>
+
+      </div>
+      <div class="depoimentos__dots" id="depoimentosDots"></div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="container">
+      <div class="contato__grid">
+        <div class="contato__info reveal">
+          <p class="section-label">Fale conosco</p>
+          <h2 class="section-title">Vamos criar<br>algo juntos?</h2>
+          <p class="contato__body">
+            Conte-nos sobre o seu projeto. Estamos prontos para ouvir,
+            entender e transformar sua visão em realidade.
+          </p>
+          <div class="contato__details">
+            <div class="contato__detail">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <circle cx="12" cy="9" r="2.5" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+              </svg>
+              <span>São Paulo, SP — Brasil</span>
+            </div>
+            <div class="contato__detail">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 013.07 3.05 2 2 0 015.07 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+              </svg>
+              <span>(11) 9 9999-9999</span>
+            </div>
+            <div class="contato__detail">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <polyline points="22,6 12,13 2,6" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+              </svg>
+              <span>contato@rosettoarquitetura.com.br</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contato__form reveal" id="contatoForm">
+          <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(11) 9 0000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="tipo">Tipo de projeto</label>
+            <select id="tipo" name="tipo">
+              <option value="">Selecione...</option>
+              <option value="residencial">Residencial</option>
+              <option value="comercial">Comercial</option>
+              <option value="interiores">Interiores</option>
+              <option value="reforma">Reforma</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group form-group--full">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-nos sobre seu projeto..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary form-group--full">Enviar mensagem ♥</button>
+          <div class="form-success" id="formSuccess">
+            Mensagem enviada com sucesso! Em breve entraremos em contato. ♥
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <!-- Submarca no footer -->
+          <div class="footer__submarca" aria-hidden="true">
+            <svg viewBox="0 0 130 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M65 12 L112 46 L112 138 L18 138 L18 46 Z" stroke="#C9A84C" stroke-width="1.4" fill="none" opacity="0.35"/>
+              <rect x="50" y="82" width="30" height="35" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.25"/>
+              <line x1="65" y1="82" x2="65" y2="117" stroke="#C9A84C" stroke-width="0.7" opacity="0.25"/>
+              <line x1="23" y1="62" x2="23" y2="95" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M23 83 Q13 74 17 63" stroke="#C9A84C" stroke-width="0.9" fill="none"/>
+              <path d="M23 74 Q33 67 29 57" stroke="#C9A84C" stroke-width="0.9" fill="none"/>
+              <circle cx="17" cy="63" r="2.2" fill="#C9A84C"/>
+              <circle cx="29" cy="57" r="2.2" fill="#C9A84C"/>
+              <text x="26" y="128"
+                    font-family="'Cormorant Garamond','Georgia',serif"
+                    font-size="108"
+                    font-weight="400"
+                    fill="#FDF8EE"
+                    opacity="0.7">R</text>
+              <text x="65" y="148" text-anchor="middle" font-size="10" fill="#C9A84C">♥</text>
+            </svg>
+          </div>
+          <span class="footer__logo">ROSETTO</span>
+          <span class="footer__logo-sub">ARQUITETURA</span>
+          <p>criar · projetar · transformar</p>
+        </div>
+        <div class="footer__links">
+          <h4>Navegação</h4>
+          <a href="#sobre">Sobre</a>
+          <a href="#valores">Valores</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#processo">Processo</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div class="footer__social">
+          <h4>Redes sociais</h4>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Pinterest">Pinterest</a>
+          <a href="#" aria-label="Houzz">Houzz</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>♥ Rosetto Arquitetura — projetos que acolhem, inspiram e transformam.</p>
+        <p>© 2026 · Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
