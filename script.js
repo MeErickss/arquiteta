@@ -79,15 +79,17 @@ const cards = track.querySelectorAll('.depoimento-card');
 let currentSlide = 0;
 let autoSlide;
 
+function isMobile() { return window.innerWidth <= 768; }
+
 function getVisible() {
   if (window.innerWidth >= 900) return 3;
-  if (window.innerWidth >= 640) return 1.2;
   return 1;
 }
 
 function buildDots() {
   dotsContainer.innerHTML = '';
-  const total = Math.ceil(cards.length / Math.floor(getVisible()));
+  if (isMobile()) return; // mobile usa scroll nativo, sem dots
+  const total = Math.ceil(cards.length / getVisible());
   for (let i = 0; i < total; i++) {
     const dot = document.createElement('button');
     dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -98,30 +100,39 @@ function buildDots() {
 }
 
 function goTo(index) {
-  const visible = Math.floor(getVisible());
+  if (isMobile()) return; // mobile usa scroll nativo
+  const visible = getVisible();
   const max = Math.max(0, cards.length - visible);
   currentSlide = Math.min(Math.max(index, 0), Math.ceil(max / visible));
-
-  const cardWidth = cards[0].offsetWidth + 24;
+  const cardWidth = cards[0].offsetWidth + 24; // 24 = gap 1.5rem
   track.style.transform = `translateX(-${currentSlide * visible * cardWidth}px)`;
-
   dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
     dot.classList.toggle('active', i === currentSlide);
   });
 }
 
 function startAuto() {
+  clearInterval(autoSlide);
+  if (isMobile()) return; // sem autoplay no mobile
   autoSlide = setInterval(() => {
-    const total = Math.ceil(cards.length / Math.floor(getVisible()));
+    const total = Math.ceil(cards.length / getVisible());
     goTo(currentSlide + 1 >= total ? 0 : currentSlide + 1);
   }, 4500);
 }
 
-buildDots();
-startAuto();
+function initCarousel() {
+  if (isMobile()) {
+    // Garante que não há transform residual do JS
+    track.style.transform = '';
+  }
+  buildDots();
+  startAuto();
+}
+
+initCarousel();
 track.addEventListener('mouseenter', () => clearInterval(autoSlide));
 track.addEventListener('mouseleave', startAuto);
-window.addEventListener('resize', () => { buildDots(); goTo(0); });
+window.addEventListener('resize', () => { currentSlide = 0; initCarousel(); });
 
 // ---------- CONTACT FORM ----------
 const form = document.getElementById('contatoForm');

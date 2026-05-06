@@ -224,100 +224,87 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    HERO
    ========================================== */
 .hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 8rem 2.5rem 4rem;
-  max-width: var(--container);
-  margin: 0 auto;
-  position: relative;
-  gap: 3rem;
-}
-
-.hero__bg-circle {
-  position: absolute;
-  top: 10%; right: 5%;
-  width: 380px; height: 380px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(246,231,166,0.35) 0%, rgba(238,223,193,0.1) 70%, transparent 100%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero__content {
-  position: relative;
-  z-index: 1;
-}
-
-.hero__eyebrow {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-}
-
-.hero__title {
+  /* Ocupa exatamente a viewport — sem scroll para ver o indicador */
+  height: 100svh;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
-}
-.hero__title-main {
-  font-family: var(--font-serif);
-  font-size: clamp(3.5rem, 7vw, 5.5rem);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--dark);
-  line-height: 1;
-}
-.hero__title-sub {
-  font-family: var(--font-sans);
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  font-weight: 300;
-  letter-spacing: 0.5em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-top: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem 5rem;
+  background: var(--offwhite);
+  position: relative;
+  overflow: hidden;
 }
 
-.hero__divider {
+/* Gradiente radial sutil ao fundo */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(246,231,166,0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__logo-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Cresce para preencher o espaço disponível, logo fica grande */
+  flex: 1;
+  width: 100%;
+}
+
+.hero__logo-img {
+  width: 100%;
+  /* Maior: ocupa até 88% da largura, com limite razoável */
+  max-width: min(860px, 88vw);
+  /* Altura máxima para caber na viewport com margem para o botão */
+  max-height: calc(100svh - 220px);
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 8px 40px rgba(201,168,76,0.08));
+  display: block;
+  margin: 0 auto;
+}
+
+.hero__cta {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  margin: 1.2rem 0;
-}
-.hero__divider::before, .hero__divider::after {
-  content: '';
-  flex: 1;
-  max-width: 80px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold));
-}
-.hero__divider::after {
-  background: linear-gradient(to left, transparent, var(--gold));
-}
-.hero__heart { color: var(--gold); font-size: 0.8rem; }
-
-.hero__tagline {
-  font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 300;
-  color: var(--gray);
-  margin-bottom: 2.5rem;
+  justify-content: center;
+  /* Espaço fixo entre logo e botão */
+  margin-top: 0;
+  padding-bottom: 3rem; /* deixa espaço para o indicador abaixo */
 }
 
-/* Submarca R + casa no hero */
-.hero__submarca {
+/* Indicador de scroll — sempre fixo no fundo do hero */
+.hero__scroll-hint {
   position: absolute;
-  bottom: -1.5rem;
-  right: 0;
-  width: 110px;
-  opacity: 0.82;
-  filter: drop-shadow(0 4px 16px rgba(201,168,76,0.15));
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
   z-index: 2;
-  pointer-events: none;
+}
+.hero__scroll-hint span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.25; transform: scaleY(0.6) translateY(-4px); }
+  50%       { opacity: 1;   transform: scaleY(1)   translateY(0); }
 }
 
 /* Submarca no footer */
@@ -325,18 +312,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 60px;
   margin-bottom: 0.6rem;
   opacity: 0.65;
-}
-
-.hero__sketch {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-}
-.arch-sketch {
-  width: 100%;
-  max-width: 480px;
-  filter: drop-shadow(0 8px 32px rgba(201, 168, 76, 0.08));
 }
 
 /* ==========================================
@@ -704,6 +679,32 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-shrink: 0;
 }
 
+/* Mobile: scroll nativo com snap — JS desativado, sem bug */
+@media (max-width: 768px) {
+  .depoimentos { overflow: hidden; }
+
+  .depoimentos__track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* sem transition para não brigar com o scroll nativo */
+    transition: none;
+    gap: 1rem;
+    /* padding lateral cria "peek" do próximo card */
+    padding: 0.5rem 1.5rem 1rem;
+  }
+  .depoimentos__track::-webkit-scrollbar { display: none; }
+
+  .depoimento-card {
+    min-width: 80vw;
+    max-width: 340px;
+    scroll-snap-align: start;
+  }
+
+  .depoimentos__dots { display: none; }
+}
+
 .depoimento-card p {
   font-family: var(--font-serif);
   font-size: 1.05rem;
@@ -979,15 +980,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 7rem 1.5rem 3rem;
-    gap: 2rem;
+  .hero { padding: 5rem 1.5rem 5rem; }
+  .hero__logo-img {
+    max-width: min(520px, 90vw);
+    max-height: calc(100svh - 200px);
   }
-  .hero__divider { justify-content: center; }
-  .hero__sketch { order: -1; }
-  .arch-sketch { max-width: 320px; }
 
   .sobre__grid { grid-template-columns: 1fr; gap: 3rem; }
   .contato__grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -1000,6 +997,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 640px) {
+  .hero__logo-img {
+    max-width: min(340px, 92vw);
+    max-height: calc(100svh - 180px);
+  }
   .valores__grid { grid-template-columns: 1fr; }
   .portfolio__grid { grid-template-columns: 1fr; }
   .portfolio-card .portfolio-card__img { aspect-ratio: 4/3 !important; }
