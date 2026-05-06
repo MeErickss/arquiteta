@@ -24,7 +24,7 @@
   --transition:  0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--font-sans);
@@ -671,35 +671,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .depoimento-card {
-  min-width: calc(33.33% - 1rem);
+  /* (100% do track - 2 gaps) / 3 cards = tamanho exato sem overflow */
+  flex: 0 0 calc((100% - 3rem) / 3);
   background: var(--offwhite);
   border: 1px solid var(--beige);
   border-radius: 8px;
   padding: 2rem;
-  flex-shrink: 0;
 }
 
-/* Mobile: scroll nativo com snap — JS desativado, sem bug */
+/* Mobile: empilha verticalmente — sem carrossel, sem overflow */
 @media (max-width: 768px) {
-  .depoimentos { overflow: hidden; }
+  .depoimentos { overflow: visible; }
 
   .depoimentos__track {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    /* sem transition para não brigar com o scroll nativo */
+    flex-direction: column;
+    gap: 1.2rem;
+    transform: none !important;
     transition: none;
-    gap: 1rem;
-    /* padding lateral cria "peek" do próximo card */
-    padding: 0.5rem 1.5rem 1rem;
+    overflow: visible;
   }
-  .depoimentos__track::-webkit-scrollbar { display: none; }
 
   .depoimento-card {
-    min-width: 80vw;
-    max-width: 340px;
-    scroll-snap-align: start;
+    flex: none;
+    width: 100%;
+    min-width: unset;
+    max-width: 100%;
   }
 
   .depoimentos__dots { display: none; }

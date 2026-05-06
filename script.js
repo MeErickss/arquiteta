@@ -81,16 +81,16 @@ let autoSlide;
 
 function isMobile() { return window.innerWidth <= 768; }
 
-function getVisible() {
-  if (window.innerWidth >= 900) return 3;
-  return 1;
-}
+// Número de cards visíveis ao mesmo tempo (desktop)
+const VISIBLE = 3;
+
+// Total de posições de slide possíveis
+function totalSlides() { return cards.length - VISIBLE + 1; } // 4 - 3 + 1 = 2
 
 function buildDots() {
   dotsContainer.innerHTML = '';
-  if (isMobile()) return; // mobile usa scroll nativo, sem dots
-  const total = Math.ceil(cards.length / getVisible());
-  for (let i = 0; i < total; i++) {
+  if (isMobile()) return;
+  for (let i = 0; i < totalSlides(); i++) {
     const dot = document.createElement('button');
     dot.className = 'dot' + (i === 0 ? ' active' : '');
     dot.setAttribute('aria-label', `Depoimento ${i + 1}`);
@@ -100,12 +100,12 @@ function buildDots() {
 }
 
 function goTo(index) {
-  if (isMobile()) return; // mobile usa scroll nativo
-  const visible = getVisible();
-  const max = Math.max(0, cards.length - visible);
-  currentSlide = Math.min(Math.max(index, 0), Math.ceil(max / visible));
-  const cardWidth = cards[0].offsetWidth + 24; // 24 = gap 1.5rem
-  track.style.transform = `translateX(-${currentSlide * visible * cardWidth}px)`;
+  if (isMobile()) return;
+  currentSlide = Math.min(Math.max(index, 0), totalSlides() - 1);
+  // gap: 1.5rem — pega valor real do CSS computado
+  const gap = parseFloat(getComputedStyle(track).gap) || 24;
+  const cardWidth = cards[0].getBoundingClientRect().width + gap;
+  track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
   dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
     dot.classList.toggle('active', i === currentSlide);
   });
@@ -113,20 +113,20 @@ function goTo(index) {
 
 function startAuto() {
   clearInterval(autoSlide);
-  if (isMobile()) return; // sem autoplay no mobile
+  if (isMobile()) return;
   autoSlide = setInterval(() => {
-    const total = Math.ceil(cards.length / getVisible());
-    goTo(currentSlide + 1 >= total ? 0 : currentSlide + 1);
+    goTo(currentSlide + 1 >= totalSlides() ? 0 : currentSlide + 1);
   }, 4500);
 }
 
 function initCarousel() {
-  if (isMobile()) {
-    // Garante que não há transform residual do JS
-    track.style.transform = '';
+  // Limpa qualquer transform inline antes de tudo
+  track.style.transform = '';
+  if (!isMobile()) {
+    goTo(0);
+    buildDots();
+    startAuto();
   }
-  buildDots();
-  startAuto();
 }
 
 initCarousel();
