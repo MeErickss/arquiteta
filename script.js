@@ -418,9 +418,3 @@ styleEl.textContent = `
   }
 `;
 document.head.appendChild(styleEl);
-
-// ---------- CONSOLE EGG ----------
-console.log('%c♥ Rosetto Arquitetura',
-  'font-family: serif; font-size:18px; color:#C9A84C; letter-spacing:0.2em;');
-console.log('%cdica: tente o código konami ↑ ↑ ↓ ↓ ← → ← → B A',
-  'font-family: monospace; font-size:11px; color:#A79F92;');
