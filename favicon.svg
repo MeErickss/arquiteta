@@ -1,55 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
   <defs>
-    <!-- Top arc: sweep=0 CCW left→top→right → text faces outward (upright) -->
-    <path id="arc-top" d="M 14,100 A 86,86 0 0,0 186,100"/>
-    <!-- Bottom arc: sweep=1 CW right→bottom→left → text faces outward (upright) -->
-    <path id="arc-bot" d="M 186,100 A 86,86 0 0,1 14,100"/>
+    <path id="text-arc-top" d="M 60,150 A 90,90 0 0,1 240,150" />
+    <path id="text-arc-bot" d="M 60,150 A 90,90 0 0,0 240,150" />
   </defs>
 
-  <!-- Outer circle -->
-  <circle cx="100" cy="100" r="98" fill="#FDF8EE" stroke="#C9A84C" stroke-width="2.5"/>
-  <!-- Inner dashed ring -->
-  <circle cx="100" cy="100" r="84" fill="none" stroke="#C9A84C" stroke-width="0.9" stroke-dasharray="3,3"/>
+  <!-- Background (off-white) -->
+  <circle cx="150" cy="150" r="150" fill="#FCF8F2" />
 
-  <!-- Sun glow -->
-  <circle cx="138" cy="52" r="20" fill="#F6E7A6" opacity="0.65"/>
+  <!-- Outer golden arcs (broken at hearts) -->
+  <!-- Left to Top to Right -->
+  <path d="M 35,140 A 115,115 0 0,1 265,140" stroke="#E3B755" stroke-width="1" fill="none" />
+  <!-- Left to Bottom to Right -->
+  <path d="M 35,160 A 115,115 0 0,0 265,160" stroke="#E3B755" stroke-width="1" fill="none" />
 
-  <!-- Architecture sketch -->
-  <line x1="30" y1="140" x2="170" y2="140" stroke="#3D3730" stroke-width="1.5"/>
-  <line x1="44"  y1="140" x2="44"  y2="100" stroke="#3D3730" stroke-width="1.2"/>
-  <line x1="80"  y1="140" x2="80"  y2="88"  stroke="#3D3730" stroke-width="1.2"/>
-  <line x1="120" y1="140" x2="120" y2="88"  stroke="#3D3730" stroke-width="1.2"/>
-  <line x1="156" y1="140" x2="156" y2="100" stroke="#3D3730" stroke-width="1.2"/>
-  <line x1="36"  y1="100" x2="164" y2="100" stroke="#3D3730" stroke-width="1.2"/>
-  <line x1="36"  y1="88"  x2="164" y2="88"  stroke="#C9A84C" stroke-width="2"/>
-  <!-- Windows -->
-  <rect x="54"  y="112" width="17" height="22" stroke="#3D3730" stroke-width="0.8" fill="none"/>
-  <rect x="91"  y="112" width="17" height="22" stroke="#3D3730" stroke-width="0.8" fill="none"/>
-  <rect x="129" y="112" width="17" height="22" stroke="#3D3730" stroke-width="0.8" fill="none"/>
-  <!-- Cross dividers -->
-  <line x1="62"  y1="112" x2="62"  y2="134" stroke="#3D3730" stroke-width="0.5"/>
-  <line x1="99"  y1="112" x2="99"  y2="134" stroke="#3D3730" stroke-width="0.5"/>
-  <line x1="137" y1="112" x2="137" y2="134" stroke="#3D3730" stroke-width="0.5"/>
+  <!-- Hearts -->
+  <text x="25" y="154" font-size="14" fill="#E3B755" text-anchor="middle">♥</text>
+  <text x="275" y="154" font-size="14" fill="#E3B755" text-anchor="middle">♥</text>
 
-  <!-- Plants -->
-  <line x1="22" y1="140" x2="22" y2="110" stroke="#3D3730" stroke-width="1"/>
-  <path d="M22 128 Q12 118 16 106" stroke="#3D3730" stroke-width="0.8" fill="none"/>
-  <path d="M22 120 Q32 112 28 100" stroke="#3D3730" stroke-width="0.8" fill="none"/>
-  <line x1="178" y1="140" x2="178" y2="114" stroke="#3D3730" stroke-width="1"/>
-  <path d="M178 127 Q168 118 172 106" stroke="#3D3730" stroke-width="0.8" fill="none"/>
-  <path d="M178 120 Q188 113 184 102" stroke="#3D3730" stroke-width="0.8" fill="none"/>
+  <!-- Watercolor splashes -->
+  <path d="M 110,120 Q 150,80 180,110 T 190,160 Q 160,190 120,180 T 100,140 Z" fill="#F4D392" opacity="0.4" />
+  <circle cx="160" cy="160" r="40" fill="#EDBE65" opacity="0.3" />
+  <circle cx="120" cy="130" r="30" fill="#EDBE65" opacity="0.2" />
 
-  <!-- Gold base line -->
-  <path d="M28 152 Q100 145 172 152" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
-  <!-- Heart -->
-  <text x="100" y="168" text-anchor="middle" font-size="13" fill="#C9A84C">♥</text>
+  <!-- House Sketch Lines -->
+  <!-- Ground lines -->
+  <line x1="75" y1="195" x2="225" y2="195" stroke="#4A453F" stroke-width="1" />
+  <line x1="70" y1="198" x2="230" y2="198" stroke="#4A453F" stroke-width="0.5" />
 
-  <!-- ROSETTO top -->
-  <text font-family="Georgia,serif" font-size="15" font-weight="700" letter-spacing="7" fill="#3D3730">
-    <textPath href="#arc-top" startOffset="50%" text-anchor="middle">ROSETTO</textPath>
+  <!-- Tree on the left -->
+  <path d="M 95,195 L 95,125" stroke="#4A453F" stroke-width="1.5" fill="none" />
+  <!-- Tree leaves (rough jagged shape) -->
+  <path d="M 95,125 Q 85,135 90,145 Q 80,155 90,165 Q 85,175 95,185 Q 105,175 100,165 Q 110,155 100,145 Q 105,135 95,125 Z" stroke="#4A453F" stroke-width="1" fill="none" />
+  <path d="M 95,125 L 90,135 M 95,145 L 85,150 M 95,165 L 100,175" stroke="#4A453F" stroke-width="0.5" fill="none" />
+
+  <!-- Main house blocks -->
+  <!-- Left block -->
+  <rect x="115" y="160" width="30" height="35" stroke="#4A453F" stroke-width="1" fill="none" />
+  <line x1="115" y1="160" x2="145" y2="160" stroke="#4A453F" stroke-width="1.5" />
+  <line x1="125" y1="160" x2="125" y2="195" stroke="#4A453F" stroke-width="0.8" />
+  <line x1="135" y1="160" x2="135" y2="195" stroke="#4A453F" stroke-width="0.8" />
+
+  <!-- Middle tall block -->
+  <rect x="145" y="130" width="40" height="65" stroke="#4A453F" stroke-width="1" fill="none" />
+  <line x1="155" y1="130" x2="155" y2="195" stroke="#4A453F" stroke-width="0.8" />
+  <line x1="165" y1="130" x2="165" y2="195" stroke="#4A453F" stroke-width="0.8" />
+  <line x1="175" y1="130" x2="175" y2="195" stroke="#4A453F" stroke-width="0.8" />
+
+  <!-- Right block -->
+  <rect x="185" y="150" width="30" height="45" stroke="#4A453F" stroke-width="1" fill="none" />
+  <line x1="195" y1="150" x2="195" y2="195" stroke="#4A453F" stroke-width="0.8" />
+  <line x1="205" y1="150" x2="205" y2="195" stroke="#4A453F" stroke-width="0.8" />
+
+  <!-- Slanted roofs over middle -->
+  <line x1="135" y1="120" x2="195" y2="110" stroke="#4A453F" stroke-width="1.5" />
+  <line x1="145" y1="130" x2="145" y2="118" stroke="#4A453F" stroke-width="1" />
+  <line x1="185" y1="130" x2="185" y2="112" stroke="#4A453F" stroke-width="1" />
+  
+  <line x1="130" y1="140" x2="210" y2="135" stroke="#4A453F" stroke-width="1" />
+
+  <!-- Plants around house -->
+  <path d="M 120,195 Q 115,185 125,185 Q 130,190 125,195" stroke="#4A453F" stroke-width="0.8" fill="none" />
+  <path d="M 190,195 Q 185,180 195,185 Q 200,195 190,195" stroke="#4A453F" stroke-width="0.8" fill="none" />
+  
+  <!-- Sketchy overshoot lines -->
+  <line x1="110" y1="160" x2="150" y2="160" stroke="#4A453F" stroke-width="0.5" />
+  <line x1="140" y1="130" x2="190" y2="130" stroke="#4A453F" stroke-width="0.5" />
+  <line x1="180" y1="150" x2="220" y2="150" stroke="#4A453F" stroke-width="0.5" />
+  <line x1="145" y1="125" x2="145" y2="200" stroke="#4A453F" stroke-width="0.5" />
+  <line x1="185" y1="145" x2="185" y2="200" stroke="#4A453F" stroke-width="0.5" />
+
+  <!-- Texts -->
+  <text font-family="'Cormorant Garamond', serif" font-size="28" font-weight="600" letter-spacing="12" fill="#3D3730">
+    <textPath href="#text-arc-top" startOffset="50%" text-anchor="middle">ROSETTO</textPath>
   </text>
-  <!-- ARQUITETURA bottom -->
-  <text font-family="Georgia,serif" font-size="10" letter-spacing="5" fill="#C9A84C">
-    <textPath href="#arc-bot" startOffset="50%" text-anchor="middle">ARQUITETURA</textPath>
+  
+  <text font-family="'Montserrat', sans-serif" font-size="14" font-weight="500" letter-spacing="8" fill="#E3B755">
+    <textPath href="#text-arc-bot" startOffset="50%" text-anchor="middle">ARQUITETURA</textPath>
   </text>
+
 </svg>
