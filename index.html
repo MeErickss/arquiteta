@@ -31,16 +31,29 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#sobre" class="mobile-menu__link">Sobre</a>
-    <a href="#valores" class="mobile-menu__link">Valores</a>
-    <a href="#portfolio" class="mobile-menu__link">Portfólio</a>
-    <a href="#processo" class="mobile-menu__link">Processo</a>
-    <a href="#contato" class="mobile-menu__link">Contato</a>
-  </div>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <aside class="mobile-menu" id="mobileMenu" aria-label="Menu de navegação">
+    <div class="mobile-menu__header">
+      <span class="mobile-menu__brand">ROSETTO</span>
+      <button class="mobile-menu__close" id="mobileClose" aria-label="Fechar menu">✕</button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <a href="#sobre"     class="mobile-menu__link" data-num="01">Sobre</a>
+      <a href="#valores"   class="mobile-menu__link" data-num="02">Valores</a>
+      <a href="#portfolio" class="mobile-menu__link" data-num="03">Portfólio</a>
+      <a href="#processo"  class="mobile-menu__link" data-num="04">Processo</a>
+      <a href="#contato"   class="mobile-menu__link" data-num="05">Contato</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <span><span class="heart">♥</span> &nbsp; projetos que acolhem</span>
+      <span>São Paulo &mdash; SP</span>
+    </div>
+  </aside>
 
   <!-- HERO -->
   <section class="hero" id="inicio">
+    <div class="hero__sun" aria-hidden="true"></div>
+    <div class="hero__particles" id="heroParticles" aria-hidden="true"></div>
     <div class="hero__logo-wrap reveal">
       <img
         src="logo.png"
@@ -384,7 +397,7 @@
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
                 <polyline points="22,6 12,13 2,6" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
               </svg>
-              <span>contato@rosettoarquitetura.com.br</span>
+              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3f3332283d28331c2e332f392828333d2e2d2935283928292e3d723f3331723e2e">[email&#160;protected]</a></span>
             </div>
           </div>
         </div>
@@ -481,6 +494,6 @@
   <!-- SCROLL TO TOP -->
   <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">↑</button>
 
-  <script src="script.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
 </body>
 </html>
