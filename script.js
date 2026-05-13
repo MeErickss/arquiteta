@@ -239,6 +239,41 @@ window.addEventListener('mousemove', (e) => {
 // ---------- CONTACT FORM ----------
 const form = document.getElementById('contatoForm');
 const formSuccess = document.getElementById('formSuccess');
+const projectChips = document.querySelectorAll('.project-chip');
+const tipoSelect = document.getElementById('tipo');
+const mensagemField = document.getElementById('mensagem');
+const projectGuideNote = document.getElementById('projectGuideNote');
+
+const projectGuideCopy = {
+  reformar: {
+    note: 'Conte o que hoje não funciona no espaço. A gente começa escutando antes de desenhar.',
+    placeholder: 'Me conte o que você quer transformar: cômodos, incômodos, estilo desejado, prazo e se a obra já tem data.'
+  },
+  decorar: {
+    note: 'Vamos entender o clima que você quer sentir ao entrar no ambiente.',
+    placeholder: 'Me conte quais ambientes precisam de decoração, o estilo que você imagina e o que deseja manter.'
+  },
+  construir: {
+    note: 'Do terreno ao primeiro croqui, organizamos as decisões para a casa nascer com intenção.',
+    placeholder: 'Me conte sobre o terreno, metragem desejada, rotina da família e principais sonhos para a construção.'
+  }
+};
+
+function setProjectGuide(chip) {
+  const project = chip.dataset.project;
+  const copy = projectGuideCopy[project];
+  projectChips.forEach(item => item.classList.toggle('active', item === chip));
+  if (tipoSelect && chip.dataset.tipo) tipoSelect.value = chip.dataset.tipo;
+  if (copy && projectGuideNote) projectGuideNote.textContent = copy.note;
+  if (copy && mensagemField) mensagemField.placeholder = copy.placeholder;
+}
+
+projectChips.forEach(chip => {
+  chip.addEventListener('click', () => setProjectGuide(chip));
+});
+const initialProjectChip = document.querySelector('.project-chip.active');
+if (initialProjectChip) setProjectGuide(initialProjectChip);
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const btn = form.querySelector('button[type="submit"]');
@@ -246,6 +281,8 @@ form.addEventListener('submit', (e) => {
   btn.disabled = true;
   setTimeout(() => {
     form.reset();
+    const defaultChip = document.querySelector('.project-chip[data-project="reformar"]');
+    if (defaultChip) setProjectGuide(defaultChip);
     btn.textContent = 'Enviar mensagem ♥';
     btn.disabled = false;
     formSuccess.classList.add('visible');
@@ -312,7 +349,7 @@ if (navLogo) {
 }
 
 // ---------- BOTÕES MAGNÉTICOS ----------
-document.querySelectorAll('.btn, .filter-btn').forEach(btn => {
+document.querySelectorAll('.btn, .filter-btn, .project-chip').forEach(btn => {
   btn.addEventListener('mousemove', (e) => {
     const r = btn.getBoundingClientRect();
     const x = e.clientX - r.left - r.width / 2;
@@ -347,7 +384,7 @@ if (fineHover) {
   }
   follow();
   
-  const hoverables = 'a, button, .filter-btn, .portfolio-card, .valor-card, input, select, textarea, .nav__logo, .hero__logo-img, .mobile-menu__link, .mobile-menu__close';
+  const hoverables = 'a, button, .filter-btn, .project-chip, .portfolio-card, .valor-card, input, select, textarea, .nav__logo, .hero__logo-img, .mobile-menu__link, .mobile-menu__close';
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(hoverables)) {
       cursor.classList.add('hovering'); trail.classList.add('hovering');
