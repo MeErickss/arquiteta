@@ -1,0 +1,9 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="150" cy="150" r="150" fill="#FAF7F1"></circle>
+  <circle cx="150" cy="130" r="78" stroke="#7C9A84" stroke-width="4" fill="none" opacity="0.35"></circle>
+  <path d="M105 148 C118 178 182 178 195 148" stroke="#7C9A84" stroke-width="3" stroke-linecap="round" fill="none"></path>
+  <path d="M118 118 C126 108 139 108 147 118" stroke="#2F3A34" stroke-width="4" stroke-linecap="round" fill="none"></path>
+  <path d="M153 118 C161 108 174 108 182 118" stroke="#2F3A34" stroke-width="4" stroke-linecap="round" fill="none"></path>
+  <path d="M150 210 C130 196 112 180 112 157 C112 139 124 128 140 128 C146 128 151 131 154 136 C157 131 164 128 171 128 C187 128 198 139 198 157 C198 180 176 196 150 210Z" fill="#DDE9D7" stroke="#7C9A84" stroke-width="3"></path>
+  <text x="150" y="263" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="600" letter-spacing="5" fill="#2F3A34">ROSETTO</text>
+</svg>

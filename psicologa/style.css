@@ -1,19 +1,19 @@
 /* ==========================================
-   ROSETTO ARQUITETURA — STYLESHEET
+   PSICOLOGIA ROSETTO — STYLESHEET
    ========================================== */
 
 /* ---------- RESET & BASE ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --gold:        #C9A84C;
-  --gold-light:  #F6E7A6;
-  --beige:       #EEDFC1;
-  --offwhite:    #FDF8EE;
-  --gray-light:  #D9D6CF;
-  --gray:        #A79F92;
-  --dark:        #3D3730;
-  --text:        #5A5047;
+  --gold:        #7C9A84;
+  --gold-light:  #DDE9D7;
+  --beige:       #D8CDBF;
+  --offwhite:    #FAF7F1;
+  --gray-light:  #D8D8D0;
+  --gray:        #8D9187;
+  --dark:        #2F3A34;
+  --text:        #536058;
   --white:       #FFFFFF;
 
   --font-serif:  'Cormorant Garamond', Georgia, serif;
@@ -28,7 +28,7 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   scrollbar-width: thin;
-  scrollbar-color: var(--gold) rgba(238, 223, 193, 0.45);
+  scrollbar-color: var(--gold) rgba(216, 216, 208, 0.5);
 }
 
 html::-webkit-scrollbar {
@@ -37,20 +37,20 @@ html::-webkit-scrollbar {
 
 html::-webkit-scrollbar-track {
   background:
-    linear-gradient(to bottom, rgba(253, 248, 238, 0.96), rgba(238, 223, 193, 0.72));
+    linear-gradient(to bottom, rgba(250, 247, 241, 0.96), rgba(221, 233, 215, 0.72));
 }
 
 html::-webkit-scrollbar-thumb {
   border: 3px solid rgba(253, 248, 238, 0.96);
   border-radius: 999px;
   background:
-    linear-gradient(180deg, var(--gold-light), var(--gold) 48%, #9f7f2f);
+    linear-gradient(180deg, var(--gold-light), var(--gold) 48%, #526F5D);
   box-shadow: inset 0 0 0 1px rgba(61, 55, 48, 0.08);
 }
 
 html::-webkit-scrollbar-thumb:hover {
   background:
-    linear-gradient(180deg, #fff1b7, var(--gold) 42%, #846724);
+    linear-gradient(180deg, #EEF6E9, var(--gold) 42%, #405848);
 }
 
 html::-webkit-scrollbar-corner {
@@ -118,7 +118,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
   padding: 0.85rem 2.2rem;
   font-family: var(--font-sans);
   font-size: 0.75rem;
@@ -270,7 +269,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .mobile-menu.open { transform: translateX(0); }
 
-/* faixa amarela vertical decorativa */
+/* faixa vertical decorativa */
 .mobile-menu::before {
   content: '';
   position: absolute;
@@ -623,7 +622,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   content: '';
   position: absolute;
   inset: 1.5rem;
-  border: 1px solid rgba(246, 231, 166, 0.18);
+  border: 1px solid rgba(221, 233, 215, 0.24);
   pointer-events: none;
 }
 .antes__grid {
@@ -645,7 +644,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .antes__painel {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  border: 1px solid rgba(246, 231, 166, 0.22);
+  border: 1px solid rgba(221, 233, 215, 0.28);
   background: rgba(253, 248, 238, 0.06);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -653,8 +652,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .antes__item {
   min-height: 190px;
   padding: 1.5rem;
-  border-right: 1px solid rgba(246, 231, 166, 0.16);
-  border-bottom: 1px solid rgba(246, 231, 166, 0.16);
+  border-right: 1px solid rgba(221, 233, 215, 0.22);
+  border-bottom: 1px solid rgba(221, 233, 215, 0.22);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -666,7 +665,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .antes__item span {
   font-family: var(--font-serif);
   font-size: 2rem;
-  color: rgba(246, 231, 166, 0.58);
+  color: rgba(221, 233, 215, 0.72);
   line-height: 1;
 }
 .antes__item p {
@@ -864,7 +863,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   min-height: 26px;
   padding: 0.25rem 0.65rem;
-  border: 1px solid rgba(246, 231, 166, 0.42);
+  border: 1px solid rgba(221, 233, 215, 0.48);
   background: rgba(253, 248, 238, 0.12);
   color: var(--offwhite);
   font-size: 0.58rem;
@@ -1446,15 +1445,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 640px) {
-  .hero__cta {
-    flex-direction: column;
-    width: min(100%, 340px);
-    gap: 0.65rem;
+  .nav {
+    padding: 1rem 1.5rem;
   }
-  .hero__cta .btn {
-    width: 100%;
-    min-width: 0;
-    white-space: normal;
+  .nav.scrolled {
+    padding: 0.75rem 1.5rem;
+  }
+  .nav__logo-name {
+    font-size: 1.08rem;
+    letter-spacing: 0.08em;
+  }
+  .nav__logo-sub {
+    font-size: 0.48rem;
+    letter-spacing: 0.28em;
   }
   .hero__logo-img {
     max-width: min(340px, 92vw);
@@ -1469,7 +1472,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .antes__item:nth-child(4) {
     min-height: 150px;
     border-right: 0;
-    border-bottom: 1px solid rgba(246, 231, 166, 0.16);
+    border-bottom: 1px solid rgba(221, 233, 215, 0.22);
   }
   .antes__item:nth-child(4) { border-bottom: 0; }
   .depois__photo { min-height: 300px; }
@@ -1501,12 +1504,12 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 999;
-  opacity: 0.06;
+  opacity: 0.035;
   mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.78 0 0 0 0 0.66 0 0 0 0 0.30 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.49 0 0 0 0 0.60 0 0 0 0 0.52 0 0 0 0.42 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
-/* cursor dot amarelo (desktop) */
+/* cursor personalizado (desktop) */
 @media (hover: hover) and (pointer: fine) {
   *, *::before, *::after { cursor: none !important; }
 
@@ -1523,7 +1526,7 @@ body::before {
     position: fixed;
     top: 0; left: 0;
     width: 12px; height: 12px;
-    background: #FFD100;
+    background: #7C9A84;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -1540,7 +1543,7 @@ body::before {
     position: fixed;
     top: 0; left: 0;
     width: 30px; height: 30px;
-    border: 1.5px solid #FFD100;
+    border: 1.5px solid #7C9A84;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -1561,7 +1564,7 @@ body::before {
   /* MOBA Click Ripple */
   .moba-ripple {
     position: fixed;
-    border: 2px solid #FFD100;
+    border: 2px solid #7C9A84;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%) scale(0);
@@ -1622,19 +1625,19 @@ body::before {
 /* botão magnético — guia de transição */
 .btn { will-change: transform; }
 
-/* hero: parallax do "sol" amarelo atrás do logo */
+/* hero: parallax do brilho suave atrás do logo */
 .hero__sun {
   position: absolute;
-  top: 18%;
+  top: 28%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(280px, 38vw, 480px);
+  width: clamp(260px, 34vw, 460px);
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle at 38% 38%,
-    rgba(246, 231, 166, 0.85) 0%,
-    rgba(246, 231, 166, 0.45) 35%,
-    rgba(246, 231, 166, 0) 70%);
+    rgba(221, 233, 215, 0.72) 0%,
+    rgba(124, 154, 132, 0.24) 35%,
+    rgba(221, 233, 215, 0) 70%);
   filter: blur(8px);
   pointer-events: none;
   z-index: 0;
@@ -1679,7 +1682,7 @@ body::before {
   transform: scale(1.05);
 }
 
-/* pincelada amarela atrás do título de cada seção */
+/* pincelada suave atrás do título de cada seção */
 .section-header { position: relative; }
 .section-header .brushstroke {
   position: absolute;
@@ -1708,7 +1711,7 @@ body::before {
   transition: text-shadow 0.6s ease;
 }
 .sobre__stat-num.counted {
-  text-shadow: 0 0 24px rgba(246, 231, 166, 0.9);
+  text-shadow: 0 0 24px rgba(221, 233, 215, 0.9);
 }
 
 /* tilt 3D nos cards do portfólio */
@@ -1721,7 +1724,7 @@ body::before {
   transition: transform 0.5s ease;
 }
 
-/* faixa amarela "destaque" sob a frase de cada step (revela ao hover) */
+/* faixa de destaque sob a frase de cada step (revela ao hover) */
 .step__content { position: relative; }
 .step__content::after {
   content: '';
@@ -1746,14 +1749,14 @@ body::before {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
-    rgba(246, 231, 166, 0.35), transparent 60%);
+    rgba(221, 233, 215, 0.45), transparent 60%);
   opacity: 0;
   transition: opacity 0.4s ease;
   z-index: -1;
 }
 .hero .btn--outline:hover::before { opacity: 1; }
 
-/* easter egg: splash de tinta amarela */
+/* easter egg: splash de tinta */
 .paint-splash {
   position: fixed;
   inset: 0;
@@ -1854,5 +1857,323 @@ body::before {
   .hero__sun, .hero__logo-img, .hero__particles span,
   .scroll-top, .retro-badge .blink {
     animation: none !important;
+  }
+}
+
+/* ==========================================
+   PSICOLOGIA ROSETTO — ADAPTAÇÃO VISUAL
+   ========================================== */
+.hero--psych {
+  min-height: 100svh;
+  justify-content: flex-start;
+  padding: 7.5rem 2rem 5rem;
+  background: var(--offwhite);
+}
+
+.hero--psych::before {
+  background:
+    radial-gradient(ellipse 58% 48% at 50% 36%, rgba(221,233,215,0.72), transparent 72%),
+    linear-gradient(to bottom, rgba(250,247,241,0), rgba(250,247,241,0.48));
+}
+
+.hero--psych .hero__logo-wrap {
+  flex: 0;
+  min-height: 0;
+  margin-top: 0;
+  width: min(820px, 88vw);
+  display: block;
+}
+
+.hero--psych .hero__logo-img {
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  filter: drop-shadow(0 18px 55px rgba(47, 58, 52, 0.08));
+}
+
+.hero__tagline {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 1.25rem auto 1.6rem;
+  padding: 0 1rem;
+  color: var(--text);
+  text-align: center;
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.hero--psych .hero__cta {
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
+
+.hero__psych-grid {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100vw - 4rem));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.hero__copy h1 {
+  max-width: 760px;
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 6.4rem);
+  font-weight: 300;
+  line-height: 0.98;
+  color: var(--dark);
+  margin-bottom: 1.4rem;
+}
+
+.hero__copy p:not(.section-label) {
+  max-width: 650px;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.2rem;
+}
+
+.hero__panel {
+  align-self: end;
+  padding: 2rem;
+  border: 1px solid rgba(124, 154, 132, 0.28);
+  border-radius: 8px;
+  background: rgba(250, 247, 241, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 24px 70px rgba(47, 58, 52, 0.12);
+}
+
+.hero__panel span {
+  display: block;
+  color: var(--gold);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.hero__panel strong {
+  display: block;
+  color: var(--dark);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.hero__panel p {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.antes {
+  background:
+    linear-gradient(135deg, rgba(47,58,52,0.94), rgba(83,96,88,0.86)),
+    url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover;
+}
+
+.portfolio-card__img--1 {
+  background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80');
+}
+.portfolio-card__img--2 {
+  background-image: url('https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1200&q=80');
+}
+.portfolio-card__img--3 {
+  background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80');
+}
+.portfolio-card__img--4 {
+  background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');
+}
+.portfolio-card__img--5 {
+  background-image: url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1000&q=80');
+}
+.portfolio-card__img--6 {
+  background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80');
+}
+
+.depois__photo {
+  background:
+    linear-gradient(to right, rgba(47,58,52,0.16), rgba(47,58,52,0)),
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80') center/cover;
+}
+
+.footer {
+  background: #2F3A34;
+}
+
+.retro-badge #retroText {
+  min-width: 10ch;
+}
+
+@media (max-width: 900px) {
+  .hero--psych {
+    min-height: 100svh;
+    padding: 6.8rem 1.5rem 4rem;
+  }
+
+  .hero__psych-grid {
+    width: min(100%, 680px);
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero__panel {
+    align-self: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__psych-grid {
+    width: 100%;
+  }
+
+  .hero__copy h1 {
+    font-size: clamp(2.55rem, 14vw, 3.9rem);
+    line-height: 1.04;
+  }
+
+  .hero--psych .hero__logo-wrap {
+    width: min(420px, 92vw);
+  }
+
+  .hero--psych .hero__logo-img {
+    width: 100%;
+  }
+
+  .hero__tagline {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero--psych .hero__cta {
+    flex-direction: column;
+    width: min(100%, 360px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero--psych .hero__cta .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Hero final: logo sem sobreposição */
+.hero.hero--psych {
+  height: 100svh;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 6.5rem 2rem 4rem;
+  background:
+    radial-gradient(ellipse 34% 28% at 50% 44%, rgba(124, 154, 132, 0.2), transparent 66%),
+    radial-gradient(ellipse 58% 46% at 50% 42%, rgba(221, 233, 215, 0.62), transparent 74%),
+    var(--offwhite);
+}
+
+.hero.hero--psych::before {
+  display: none;
+}
+
+.hero.hero--psych .hero__sun {
+  display: none;
+}
+
+.hero.hero--psych .hero__particles {
+  opacity: 0.42;
+}
+
+.hero.hero--psych .hero__logo-wrap {
+  order: 1;
+  flex: 0 0 auto;
+  width: min(620px, 78vw);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero.hero--psych .hero__logo-img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 18px 48px rgba(47, 58, 52, 0.08));
+}
+
+.hero.hero--psych .hero__cta {
+  order: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  width: min(560px, 92vw);
+  margin: 0;
+  padding: 0;
+}
+
+.hero.hero--psych .hero__cta .btn {
+  width: 100%;
+  min-height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero.hero--psych .hero__scroll-hint {
+  bottom: 1.8rem;
+}
+
+@media (max-width: 640px) {
+  .hero.hero--psych {
+    min-height: 100svh;
+    gap: 1rem;
+    padding: 6.2rem 1.5rem 4rem;
+  }
+
+  .hero.hero--psych .hero__logo-wrap {
+    width: min(330px, 82vw);
+  }
+
+  .hero.hero--psych .hero__cta {
+    width: 100%;
+    max-width: 342px;
+    grid-template-columns: 1fr;
+  }
+
+  .hero.hero--psych .hero__cta .btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 56px;
+    white-space: normal;
   }
 }

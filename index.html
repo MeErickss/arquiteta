@@ -6,6 +6,7 @@
   <title>Rosetto Arquitetura</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-extras.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -14,7 +15,7 @@
 
   <!-- NAV -->
   <header class="nav" id="nav">
-    <div class="nav__logo">
+    <div class="nav__logo" role="link" tabindex="0" data-switch-url="psicologa/index.html" aria-label="Ir para Psicologia Rosetto">
       <span class="nav__logo-name">ROSETTO</span>
       <span class="nav__logo-sub">ARQUITETURA</span>
     </div>
@@ -23,6 +24,7 @@
       <a href="#valores">Valores</a>
       <a href="#portfolio">Portfólio</a>
       <a href="#processo">Processo</a>
+      <a href="#" data-open-modal="prof">Profissional</a>
       <a href="#contato">Contato</a>
     </nav>
     <button class="nav__toggle" id="navToggle" aria-label="Menu">
@@ -31,17 +33,31 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#sobre" class="mobile-menu__link">Sobre</a>
-    <a href="#valores" class="mobile-menu__link">Valores</a>
-    <a href="#portfolio" class="mobile-menu__link">Portfólio</a>
-    <a href="#processo" class="mobile-menu__link">Processo</a>
-    <a href="#contato" class="mobile-menu__link">Contato</a>
-  </div>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <aside class="mobile-menu" id="mobileMenu" aria-label="Menu de navegação">
+    <div class="mobile-menu__header">
+      <span class="mobile-menu__brand">ROSETTO</span>
+      <button class="mobile-menu__close" id="mobileClose" aria-label="Fechar menu">✕</button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <a href="#sobre"     class="mobile-menu__link" data-num="01">Sobre</a>
+      <a href="#valores"   class="mobile-menu__link" data-num="02">Valores</a>
+      <a href="#portfolio" class="mobile-menu__link" data-num="03">Portfólio</a>
+      <a href="#processo"  class="mobile-menu__link" data-num="04">Processo</a>
+      <a href="#"          class="mobile-menu__link" data-num="05" data-open-modal="prof">Profissional</a>
+      <a href="#contato"   class="mobile-menu__link" data-num="06">Contato</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <span><span class="heart">♥</span> &nbsp; projetos que acolhem</span>
+      <span>Campo Mourão &mdash; PR</span>
+    </div>
+  </aside>
 
   <!-- HERO -->
   <section class="hero" id="inicio">
-    <div class="hero__logo-wrap reveal">
+    <div class="hero__sun" aria-hidden="true"></div>
+    <div class="hero__particles" id="heroParticles" aria-hidden="true"></div>
+    <div class="hero__logo-wrap reveal" role="link" tabindex="0" data-switch-url="psicologa/index.html" aria-label="Ir para Psicologia Rosetto">
       <img
         src="logo.png"
         alt="Rosetto Arquitetura — projetos que acolhem, inspiram e transformam"
@@ -49,6 +65,7 @@
       />
     </div>
     <div class="hero__cta reveal">
+      <a href="#" class="btn btn--primary" data-open-modal="agendar">Agendar reunião</a>
       <a href="#sobre" class="btn btn--outline">Conheça nosso trabalho</a>
     </div>
     <!-- Indicador fixo no fundo do hero, sempre visível -->
@@ -101,6 +118,40 @@
           <blockquote class="sobre__quote">
             <p>"Arquitetura com intenção, que melhora vidas e cria histórias."</p>
           </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES DO PROJETO -->
+  <section class="antes" id="antes">
+    <div class="container">
+      <div class="antes__grid">
+        <div class="antes__intro reveal">
+          <p class="section-label">Antes do projeto</p>
+          <h2 class="section-title">Quando a casa ainda não conversa com a sua vida.</h2>
+          <p>
+            A transformação começa quando a rotina, os desejos e os detalhes que incomodam
+            ganham nome. É daí que nasce um projeto com direção, calma e personalidade.
+          </p>
+        </div>
+        <div class="antes__painel reveal" aria-label="Sensações antes do projeto">
+          <article class="antes__item">
+            <span>01</span>
+            <p>Ambientes bonitos no papel, mas sem pertencimento no dia a dia.</p>
+          </article>
+          <article class="antes__item">
+            <span>02</span>
+            <p>Dúvidas sobre materiais, acabamentos, orçamento e por onde começar.</p>
+          </article>
+          <article class="antes__item">
+            <span>03</span>
+            <p>Espaços que já não acompanham a rotina, a família ou o momento atual.</p>
+          </article>
+          <article class="antes__item antes__item--gold">
+            <span>04</span>
+            <p>A Rosetto entra para traduzir tudo isso em forma, luz, escolha e obra.</p>
+          </article>
         </div>
       </div>
     </div>
@@ -185,6 +236,11 @@
             <div class="portfolio-card__overlay">
               <span>Casa Contemporânea</span>
               <small>Residencial · São Paulo</small>
+              <div class="portfolio-card__editorial">
+                <b>220m²</b>
+                <b>Luz natural</b>
+                <b>Refúgio urbano</b>
+              </div>
             </div>
           </div>
         </div>
@@ -194,6 +250,11 @@
             <div class="portfolio-card__overlay">
               <span>Sala Living Serena</span>
               <small>Interiores · Campinas</small>
+              <div class="portfolio-card__editorial">
+                <b>68m²</b>
+                <b>Integração</b>
+                <b>Texturas leves</b>
+              </div>
             </div>
           </div>
         </div>
@@ -203,6 +264,11 @@
             <div class="portfolio-card__overlay">
               <span>Suíte Master</span>
               <small>Interiores · Santos</small>
+              <div class="portfolio-card__editorial">
+                <b>32m²</b>
+                <b>Privacidade</b>
+                <b>Hotel em casa</b>
+              </div>
             </div>
           </div>
         </div>
@@ -212,6 +278,11 @@
             <div class="portfolio-card__overlay">
               <span>Planta Aberta</span>
               <small>Residencial · Florianópolis</small>
+              <div class="portfolio-card__editorial">
+                <b>145m²</b>
+                <b>Convivência</b>
+                <b>Cozinha viva</b>
+              </div>
             </div>
           </div>
         </div>
@@ -221,6 +292,11 @@
             <div class="portfolio-card__overlay">
               <span>Fachada Minimalista</span>
               <small>Comercial · São Paulo</small>
+              <div class="portfolio-card__editorial">
+                <b>310m²</b>
+                <b>Presença</b>
+                <b>Marca no espaço</b>
+              </div>
             </div>
           </div>
         </div>
@@ -230,11 +306,50 @@
             <div class="portfolio-card__overlay">
               <span>Escritório Home</span>
               <small>Interiores · Curitiba</small>
+              <div class="portfolio-card__editorial">
+                <b>18m²</b>
+                <b>Foco</b>
+                <b>Rotina fluida</b>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ANTES & DEPOIS — slider arrastável -->
+  <section class="antes-depois" id="antes-depois">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Antes & Depois</p>
+        <h2 class="section-title">Arraste para ver a transformação</h2>
+      </div>
+      <div class="antes-depois__intro reveal">
+        <p>Cada projeto da Rosetto começa onde algo já existe — uma planta, uma rotina, um sonho meio formado. A diferença está em como tudo se reorganiza depois.</p>
+      </div>
+      <div class="compare reveal" role="slider" aria-label="Comparar antes e depois">
+        <div class="compare__layer compare__layer--before"></div>
+        <div class="compare__layer compare__layer--after"></div>
+        <span class="compare__label compare__label--before">Antes</span>
+        <span class="compare__label compare__label--after">Depois</span>
+        <div class="compare__handle">
+          <div class="compare__knob"></div>
+        </div>
+      </div>
+      <p class="compare__hint reveal">↔ arraste o cursor sobre a imagem</p>
+    </div>
+  </section>
+
+  <!-- QUIZ — Descubra seu estilo -->
+  <section class="quiz" id="quiz">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Descubra seu estilo</p>
+        <h2 class="section-title">Que casa mora dentro de você?</h2>
+      </div>
+      <div class="quiz__inner reveal"></div>
     </div>
   </section>
 
@@ -259,6 +374,9 @@
         <h2 class="section-title">Nosso processo</h2>
       </div>
       <div class="processo__steps">
+        <svg class="processo__sketch" viewBox="0 0 120 660" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M60 4 C42 76 78 126 60 196 C42 270 78 328 60 402 C42 480 78 552 60 656" />
+        </svg>
 
         <div class="step reveal">
           <div class="step__number">01</div>
@@ -300,6 +418,28 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE FICA DEPOIS -->
+  <section class="depois" id="depois">
+    <div class="depois__photo" aria-hidden="true"></div>
+    <div class="container">
+      <div class="depois__content reveal">
+        <p class="section-label">O que fica depois da obra</p>
+        <h2 class="section-title">A casa pronta é só o começo.</h2>
+        <p>
+          Depois da última limpeza, ficam os encontros ao redor da mesa, a luz entrando
+          no horário certo, o silêncio bom de chegar em casa e a sensação de que cada
+          escolha finalmente encontrou o seu lugar.
+        </p>
+        <div class="depois__moments">
+          <span>Luz da manhã</span>
+          <span>Mesa recebendo</span>
+          <span>Rotina mais leve</span>
+          <span>Memórias novas</span>
+        </div>
       </div>
     </div>
   </section>
@@ -371,7 +511,7 @@
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
                 <circle cx="12" cy="9" r="2.5" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
               </svg>
-              <span>São Paulo, SP — Brasil</span>
+              <span>Campo Mourão, PR — Brasil</span>
             </div>
             <div class="contato__detail">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -384,12 +524,23 @@
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
                 <polyline points="22,6 12,13 2,6" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
               </svg>
-              <span>contato@rosettoarquitetura.com.br</span>
+              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3f3332283d28331c2e332f392828333d2e2d2935283928292e3d723f3331723e2e">[email&#160;protected]</a></span>
             </div>
           </div>
         </div>
 
         <form class="contato__form reveal" id="contatoForm">
+          <div class="contato__selector form-group--full" aria-label="Escolha o ponto de partida do projeto">
+            <p class="contato__selector-label">Comece por aqui</p>
+            <div class="contato__selector-options">
+              <button type="button" class="project-chip active" data-project="reformar" data-tipo="reforma">Quero reformar</button>
+              <button type="button" class="project-chip" data-project="decorar" data-tipo="interiores">Quero decorar</button>
+              <button type="button" class="project-chip" data-project="construir" data-tipo="residencial">Quero construir</button>
+            </div>
+            <p class="contato__selector-note" id="projectGuideNote">
+              Conte o que hoje não funciona no espaço. A gente começa escutando antes de desenhar.
+            </p>
+          </div>
           <div class="form-group">
             <label for="nome">Nome completo</label>
             <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
@@ -420,6 +571,51 @@
           <button type="submit" class="btn btn--primary form-group--full">Enviar mensagem ♥</button>
           <div class="form-success" id="formSuccess">
             Mensagem enviada com sucesso! Em breve entraremos em contato. ♥
+          </div>
+
+          <!-- Estimador de Investimento -->
+          <div class="estimator form-group--full">
+            <p class="estimator__title">Estimador de investimento</p>
+            <p class="estimator__sub">Uma ideia inicial — antes da gente conversar.</p>
+
+            <div class="estimator__row">
+              <div class="estimator__row-head">
+                <span class="estimator__row-label">Área do projeto</span>
+                <span class="estimator__row-value" data-est-val="area">80 m²</span>
+              </div>
+              <input type="range" min="20" max="400" step="5" value="80"
+                     class="estimator__slider" data-est="area" aria-label="Área em metros quadrados" />
+            </div>
+
+            <div class="estimator__row">
+              <div class="estimator__row-head">
+                <span class="estimator__row-label">Estilo</span>
+              </div>
+              <div class="estimator__chips">
+                <button type="button" class="estimator__chip" data-est-style="basico">Essencial</button>
+                <button type="button" class="estimator__chip active" data-est-style="aconchego">Aconchego</button>
+                <button type="button" class="estimator__chip" data-est-style="refinado">Refinado</button>
+              </div>
+            </div>
+
+            <div class="estimator__row">
+              <div class="estimator__row-head">
+                <span class="estimator__row-label">Acabamento</span>
+              </div>
+              <div class="estimator__chips">
+                <button type="button" class="estimator__chip" data-est-finish="basico">Básico</button>
+                <button type="button" class="estimator__chip active" data-est-finish="medio">Médio</button>
+                <button type="button" class="estimator__chip" data-est-finish="premium">Premium</button>
+              </div>
+            </div>
+
+            <div class="estimator__output">
+              <div>
+                <p class="estimator__output-label">Faixa estimada</p>
+                <p class="estimator__output-range" data-est-range>R$ 0 — R$ 0</p>
+              </div>
+              <p class="estimator__output-note">Valores indicativos. Cada projeto recebe orçamento dedicado.</p>
+            </div>
           </div>
         </form>
       </div>
@@ -481,6 +677,138 @@
   <!-- SCROLL TO TOP -->
   <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">↑</button>
 
-  <script src="script.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+  <script>
+  window.ROSETTO_CONFIG = {
+    heroTrail: 'none',
+    railSections: [
+      { id: 'sobre',         label: 'Sobre'           },
+      { id: 'antes',         label: 'Antes'           },
+      { id: 'valores',       label: 'Valores'         },
+      { id: 'portfolio',     label: 'Portfólio'       },
+      { id: 'antes-depois',  label: 'Antes & Depois'  },
+      { id: 'quiz',          label: 'Seu Estilo'      },
+      { id: 'processo',      label: 'Processo'        },
+      { id: 'contato',       label: 'Contato'         }
+    ],
+    quizResultLabel: 'Seu estilo é',
+    quizQuestions: [
+      { q: 'Qual ambiente faz seu coração bater mais forte?', sub: 'Escolha a foto que mais te abraça.',
+        options: [
+          { id:'min',    label:'Linhas limpas, luz total', img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80' },
+          { id:'aconch', label:'Tecidos, madeira, calor',  img:'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=600&q=80' },
+          { id:'class',  label:'Detalhes, simetria, joia', img:'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=600&q=80' },
+          { id:'ind',    label:'Tijolo, metal, caráter',   img:'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80' }
+        ]},
+      { q: 'Como você prefere começar a manhã em casa?', sub: 'O ritual diz muito sobre o espaço ideal.',
+        options: [
+          { id:'min',    label:'Janela aberta, silêncio', img:'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80' },
+          { id:'aconch', label:'Café na mesa de madeira', img:'https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=600&q=80' },
+          { id:'class',  label:'Sala de leitura',         img:'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80' },
+          { id:'ind',    label:'Cozinha aberta, vinil',   img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80' }
+        ]},
+      { q: 'Sua paleta favorita é mais…', sub: 'Cores moldam o sentimento da casa.',
+        options: [
+          { id:'min',    label:'Branco, areia, gesso',     img:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80' },
+          { id:'aconch', label:'Terracota, oliva, mel',    img:'https://images.unsplash.com/photo-1567016526105-22da7c13161a?auto=format&fit=crop&w=600&q=80' },
+          { id:'class',  label:'Off-white, dourado, ônix', img:'https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=600&q=80' },
+          { id:'ind',    label:'Grafite, ferrugem, couro', img:'https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=600&q=80' }
+        ]},
+      { q: 'O que não pode faltar na casa dos seus sonhos?', sub: 'Escolha a peça que te define.',
+        options: [
+          { id:'min',    label:'Pé-direito alto',          img:'https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&fit=crop&w=600&q=80' },
+          { id:'aconch', label:'Lareira ou ofurô',         img:'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=80' },
+          { id:'class',  label:'Hall de entrada generoso', img:'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=600&q=80' },
+          { id:'ind',    label:'Loft com mezanino',         img:'https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=600&q=80' }
+        ]}
+    ],
+    quizResults: {
+      min:    { name:'Minimalista Sereno',     body:'Você busca silêncio visual, luz natural protagonista e materiais que envelhecem com elegância. Espaços que respiram.', tags:['Luz natural','Linhas limpas','Materiais nobres','Vazios intencionais'], filter:'residencial', scrollTo:'portfolio', cta:'Ver projetos do meu estilo' },
+      aconch: { name:'Aconchego Contemporâneo', body:'Você ama uma casa que abraça. Madeiras quentes, tecidos macios, iluminação dourada e cantos que convidam a ficar.',                  tags:['Tons quentes','Texturas','Iluminação acolhedora','Cantos de leitura'], filter:'interiores', scrollTo:'portfolio', cta:'Ver projetos do meu estilo' },
+      class:  { name:'Clássico Refinado',       body:'Detalhe, simetria e materiais que contam história. Sua casa é elegante, atemporal e cheia de pequenos rituais.',                          tags:['Simetria','Detalhes','Atemporalidade','Marcenaria'], filter:'residencial', scrollTo:'portfolio', cta:'Ver projetos do meu estilo' },
+      ind:    { name:'Industrial Quente',      body:'Você gosta de caráter. Pé-direito alto, materiais expostos, mas sempre com camadas de conforto que humanizam o concreto.',          tags:['Materiais expostos','Pé-direito','Iluminação dramática','Mix de eras'], filter:'comercial', scrollTo:'portfolio', cta:'Ver projetos do meu estilo' }
+    },
+    projects: {
+      1: { title:'Casa Contemporânea',     cat:'Residencial', loc:'São Paulo · 2024',
+           desc:'"Buscamos uma casa que respeita o tempo do dia. A luz da manhã entra na cozinha; ao final da tarde, banha o living. A planta foi pensada ao redor desses dois momentos."',
+           specs:[['220 m²','Área construída'],['8 meses','Duração do projeto'],['3','Pavimentos'],['LEED Gold','Sustentabilidade']],
+           imgs:['https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1200&q=80'] },
+      2: { title:'Sala Living Serena',     cat:'Interiores',  loc:'Campinas · 2025',
+           desc:'"O living foi pensado para conversar com a varanda. Tecidos leves, marcenaria sob medida e uma paleta de areia e oliva."',
+           specs:[['68 m²','Área'],['3 meses','Projeto'],['Sob medida','Marcenaria'],['Natural','Iluminação']],
+           imgs:['https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=80'] },
+      3: { title:'Suíte Master',           cat:'Interiores',  loc:'Santos · 2024',
+           desc:'"Hotel em casa: privacidade, banho como ritual, iluminação cênica em três cenas, cama de pé-direito duplo."',
+           specs:[['32 m²','Área'],['Cenas','Iluminação'],['Walk-in','Closet'],['Spa','Banheiro']],
+           imgs:['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80'] },
+      4: { title:'Planta Aberta',          cat:'Residencial', loc:'Florianópolis · 2025',
+           desc:'"Cozinha como coração da casa. Bancada que vira mesa, ilha que vira bar, sala e jardim como uma coisa só."',
+           specs:[['145 m²','Área'],['Integrada','Planta'],['8 metros','Cozinha'],['Vista mar','Implantação']],
+           imgs:['https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1567016526105-22da7c13161a?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'] },
+      5: { title:'Fachada Minimalista',    cat:'Comercial',   loc:'São Paulo · 2024',
+           desc:'"Uma marca tem fachada. Estudamos cada proporção, cada material, cada reflexo — o prédio é o primeiro outdoor."',
+           specs:[['310 m²','Área'],['12 meses','Obra'],['Pedra','Revestimento'],['LED','Iluminação']],
+           imgs:['https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1200&q=80'] },
+      6: { title:'Escritório Home',        cat:'Interiores',  loc:'Curitiba · 2025',
+           desc:'"Cabine de foco no apartamento. Acústica, biofilia e uma janela perfeita para o intervalo entre reuniões."',
+           specs:[['18 m²','Área'],['Acústica','Painel'],['Verde','Biofilia'],['Ergonomia','Estação']],
+           imgs:['https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80'] }
+    },
+    profissional: {
+      kicker: 'Conheça',
+      name: 'Helena Rosetto',
+      role: 'Arquiteta & urbanista responsável',
+      lead: '“Acredito que projetar é, antes de tudo, ouvir. Cada planta nasce de uma rotina, não de um estilo. O estilo aparece depois — da escuta certa.”',
+      credentials: 'CAU/PR · A98765-4 · 8 anos de estúdio aberto',
+      photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80',
+      photoCaption: 'helena no estúdio — campo mourão',
+      contact: [
+        { label:'WhatsApp',  href:'#contato' },
+        { label:'Instagram', href:'#' },
+        { label:'LinkedIn',  href:'#' }
+      ],
+      tabs: [
+        { label:'Bio',
+          body:`<p>Helena Rosetto fundou o estúdio em 2018 depois de uma década em escritórios de arquitetura residencial em São Paulo e Curitiba. Sua história com a profissão começou cedo — desenhando plantas de casa nas folhas avulsas do caderno da escola.</p><p>Hoje conduz a Rosetto Arquitetura ao lado de uma equipe pequena, com a convicção de que cada projeto merece uma relação direta com quem assina. Aqui não tem terceirização de escuta.</p>` },
+        { label:'Formação',
+          body:`<p>Formação acadêmica voltada a arquitetura residencial, interiores e urbanismo sensível, com aprofundamento contínuo em sustentabilidade e iluminação natural.</p>`,
+          list:['UTFPR — Arquitetura e Urbanismo (2014)','Pós em Arquitetura de Interiores — IPOG (2017)','Curso Lighting Design — Belas Artes (2019)','Formação Lean Construction — IBEC (2021)','LEED Green Associate (2022)'] },
+        { label:'Abordagem',
+          body:`<p>Nosso método é simples e disciplinado: começamos sempre por uma etapa de escuta. Só depois desenhamos. Cada projeto tem trilha própria, mas alguns princípios não mudam:</p>`,
+          list:['Luz natural como primeiro material','Marcenaria sob medida','Materiais que envelhecem bem','Orçamento transparente desde a 1ª reunião','Visitas regulares de obra','Acompanhamento pós-entrega'] },
+        { label:'Onde encontrar',
+          body:`<p>Atendemos presencialmente em Campo Mourão (PR) e, mediante agenda, em todo o sul e sudeste do país. Reuniões iniciais podem ser online.</p><p><b>Estúdio:</b> Rua das Palmeiras, 1234 — Campo Mourão/PR<br><b>Horários:</b> Seg a sex · 09h às 18h<br><b>Whats:</b> (11) 9 9999-9999</p>` }
+      ]
+    },
+    faqTitle: 'Antes de você nos escrever',
+    faqSub: 'As perguntas que mais ouvimos por aqui.',
+    faq: [
+      { q:'Como começa um projeto com vocês?',
+        a:'Tudo começa numa reunião de escuta (online ou presencial). Não desenhamos nada antes de entender rotina, sonhos e orçamento. Esse encontro é gratuito.' },
+      { q:'Vocês atendem em outras cidades?',
+        a:'Sim. Atendemos em Campo Mourão, todo o Paraná e, sob agenda, no sul e sudeste. As reuniões iniciais e várias etapas seguintes podem ser feitas online.' },
+      { q:'Qual o valor médio de um projeto?',
+        a:'Trabalhamos com orçamento por escopo. O Estimador no fim do contato dá uma faixa indicativa por m², mas o número final vem depois da escuta inicial — nunca cobramos por estimativa.' },
+      { q:'Vocês acompanham a obra?',
+        a:'Sim, com visitas regulares (presenciais e remotas). Cada projeto tem cronograma com pontos de checagem e nosso compromisso é que aquilo que foi desenhado seja executado com fidelidade.' },
+      { q:'E se eu só quero decorar um ambiente?',
+        a:'Atendemos projetos completos e também projetos de interiores de um único ambiente. É só nos contar o que você quer transformar.' },
+      { q:'Quanto tempo leva um projeto?',
+        a:'Projetos de interiores levam em média 2 a 4 meses. Construções completas, de 6 a 18 meses dependendo do porte. Detalhamos o cronograma no contrato.' }
+    ],
+    agendar: {
+      label: 'Reunião inicial',
+      title: 'Vamos conversar sobre seu projeto',
+      sub: 'A primeira reunião é gratuita, com duração aproximada de 40min. Pode ser online ou presencial.',
+      slots: ['09:00','10:00','11:00','14:00','15:00','16:00','17:00','18:00']
+    },
+    fabs: [
+      { label:'Dúvidas', modal:'faq' },
+      { label:'Agendar', modal:'agendar' }
+    ],
+    easterMsg: 'Obrigado por brincar com a gente. <small>♥ projetos que acolhem</small>'
+  };
+  </script>
+  <script src="script-extras.js"></script>
 </body>
 </html>

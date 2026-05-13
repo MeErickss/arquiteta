@@ -56,15 +56,15 @@ document.querySelectorAll('.reveal').forEach((el) => {
   revealObserver.observe(el);
 });
 
-// ---------- PINCELADA AMARELA ATRÁS DOS TÍTULOS ----------
+// ---------- PINCELADA SUAVE ATRÁS DOS TÍTULOS ----------
 // Injeta uma SVG de pincelada em cada .section-header e revela quando entra no viewport
 const brushSVG = `
 <svg class="brushstroke" viewBox="0 0 220 38" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path d="M5 22 C 30 8, 60 32, 95 18 S 160 6, 215 20"
-        stroke="#F6E7A6" stroke-width="22" fill="none"
+        stroke="#DDE9D7" stroke-width="22" fill="none"
         stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
   <path d="M10 26 C 45 18, 80 30, 130 22 S 200 18, 212 24"
-        stroke="#C9A84C" stroke-width="3" fill="none"
+        stroke="#7C9A84" stroke-width="3" fill="none"
         stroke-linecap="round" opacity="0.5"/>
 </svg>`;
 document.querySelectorAll('.section-header').forEach(h => {
@@ -245,17 +245,17 @@ const mensagemField = document.getElementById('mensagem');
 const projectGuideNote = document.getElementById('projectGuideNote');
 
 const projectGuideCopy = {
-  reformar: {
-    note: 'Conte o que hoje não funciona no espaço. A gente começa escutando antes de desenhar.',
-    placeholder: 'Me conte o que você quer transformar: cômodos, incômodos, estilo desejado, prazo e se a obra já tem data.'
+  ansiedade: {
+    note: 'Conte brevemente o que você tem sentido. Não precisa organizar tudo antes de pedir ajuda.',
+    placeholder: 'Você pode falar sobre sintomas, rotina, sono, pensamentos acelerados ou situações que têm disparado ansiedade.'
   },
-  decorar: {
-    note: 'Vamos entender o clima que você quer sentir ao entrar no ambiente.',
-    placeholder: 'Me conte quais ambientes precisam de decoração, o estilo que você imagina e o que deseja manter.'
+  autoestima: {
+    note: 'Podemos começar pelo modo como você tem se visto, se cobrado ou se tratado.',
+    placeholder: 'Conte um pouco sobre inseguranças, cobranças, imagem de si, comparações ou mudanças que deseja construir.'
   },
-  construir: {
-    note: 'Do terreno ao primeiro croqui, organizamos as decisões para a casa nascer com intenção.',
-    placeholder: 'Me conte sobre o terreno, metragem desejada, rotina da família e principais sonhos para a construção.'
+  relacionamentos: {
+    note: 'Relações também precisam de escuta: vínculos, limites, conflitos e formas de se comunicar.',
+    placeholder: 'Conte brevemente sobre a relação ou situação que você deseja compreender melhor.'
   }
 };
 
@@ -281,7 +281,7 @@ form.addEventListener('submit', (e) => {
   btn.disabled = true;
   setTimeout(() => {
     form.reset();
-    const defaultChip = document.querySelector('.project-chip[data-project="reformar"]');
+    const defaultChip = document.querySelector('.project-chip[data-project="ansiedade"]');
     if (defaultChip) setProjectGuide(defaultChip);
     btn.textContent = 'Enviar mensagem ♥';
     btn.disabled = false;
@@ -310,7 +310,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ---------- HERO PARALLAX (sol amarelo) ----------
+// ---------- HERO PARALLAX (brilho suave) ----------
 const sun = document.querySelector('.hero__sun');
 const heroLogo = document.querySelector('.hero__logo-img');
 window.addEventListener('mousemove', (e) => {
@@ -425,18 +425,18 @@ const badge = document.createElement('div');
 badge.className = 'retro-badge';
 badge.innerHTML = `
   <span class="blink"></span>
-  <span id="retroText">Estúdio aberto</span>
+  <span id="retroText">Agenda aberta</span>
 `;
 document.body.appendChild(badge);
 setTimeout(() => badge.classList.add('visible'), 1200);
 
 // rotaciona pequenas frases retrô
 const retroPhrases = [
-  'Estúdio aberto',
-  'Tracejando ideias',
-  'Pintando espaços',
-  'Café & projetos',
-  'Modo criação: ON'
+  'Agenda aberta',
+  'Escuta ativa',
+  'Atendimento online',
+  'Campo Mourão PR',
+  'Cuidado em sessão'
 ];
 let rIdx = 0;
 const retroText = badge.querySelector('#retroText');
