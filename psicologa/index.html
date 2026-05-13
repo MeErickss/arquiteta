@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psicologia Rosetto</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__logo" role="link" tabindex="0" data-switch-url="../index.html" aria-label="Ir para Rosetto Arquitetura">
+      <span class="nav__logo-name">ROSETTO</span>
+      <span class="nav__logo-sub">PSICOLOGIA</span>
+    </div>
+    <nav class="nav__links">
+      <a href="#sobre">Sobre</a>
+      <a href="#valores">Cuidado</a>
+      <a href="#portfolio">Atendimentos</a>
+      <a href="#processo">Processo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <aside class="mobile-menu" id="mobileMenu" aria-label="Menu de navegação">
+    <div class="mobile-menu__header">
+      <span class="mobile-menu__brand">ROSETTO</span>
+      <button class="mobile-menu__close" id="mobileClose" aria-label="Fechar menu">✕</button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <a href="#sobre" class="mobile-menu__link" data-num="01">Sobre</a>
+      <a href="#valores" class="mobile-menu__link" data-num="02">Cuidado</a>
+      <a href="#portfolio" class="mobile-menu__link" data-num="03">Atendimentos</a>
+      <a href="#processo" class="mobile-menu__link" data-num="04">Processo</a>
+      <a href="#contato" class="mobile-menu__link" data-num="05">Contato</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <span><span class="heart">♥</span> &nbsp; escuta com presença</span>
+      <span>Campo Mourão &mdash; PR</span>
+    </div>
+  </aside>
+
+  <section class="hero hero--psych" id="inicio">
+    <div class="hero__sun" aria-hidden="true"></div>
+    <div class="hero__particles" id="heroParticles" aria-hidden="true"></div>
+    <div class="hero__logo-wrap reveal" role="link" tabindex="0" data-switch-url="../index.html" aria-label="Ir para Rosetto Arquitetura">
+      <img
+        src="psicologia-rosetto-logo.svg"
+        alt="Psicologia Rosetto — escuta com presença, cuidado e ética"
+        class="hero__logo-img"
+      />
+    </div>
+    <div class="hero__cta reveal">
+      <a href="#contato" class="btn btn--primary">Agendar conversa</a>
+      <a href="#sobre" class="btn btn--outline">Conhecer abordagem</a>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="sobre__grid">
+        <div class="sobre__text reveal">
+          <p class="section-label">Sobre a clínica</p>
+          <h2 class="section-title">Cuidar da mente também é cuidar da vida.</h2>
+          <p class="sobre__lead">Acolhimento, clareza e presença para atravessar processos difíceis.</p>
+          <p class="sobre__body">
+            A Psicologia Rosetto nasce da ideia de que terapia não precisa ser um lugar
+            distante ou frio. Aqui, cada sessão é conduzida com escuta atenta, sigilo,
+            respeito à sua história e compromisso com o seu processo.
+          </p>
+          <p class="sobre__body">
+            O objetivo não é oferecer respostas prontas, mas construir junto uma forma
+            mais consciente de lidar com emoções, relações, escolhas e limites.
+          </p>
+          <div class="sobre__tags">
+            <span>Escuta</span>
+            <span>Sigilo</span>
+            <span>Acolhimento</span>
+            <span>Autoconhecimento</span>
+            <span>Presença</span>
+            <span>Cuidado</span>
+          </div>
+        </div>
+        <div class="sobre__visual reveal">
+          <div class="sobre__card">
+            <div class="sobre__stat">
+              <span class="sobre__stat-num">+900</span>
+              <span class="sobre__stat-label">Sessões realizadas</span>
+            </div>
+            <div class="sobre__stat">
+              <span class="sobre__stat-num">7</span>
+              <span class="sobre__stat-label">Anos de experiência</span>
+            </div>
+            <div class="sobre__stat">
+              <span class="sobre__stat-num">100%</span>
+              <span class="sobre__stat-label">Atendimento sigiloso</span>
+            </div>
+          </div>
+          <blockquote class="sobre__quote">
+            <p>"A terapia é um lugar para se ouvir com menos cobrança e mais honestidade."</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="antes" id="antes">
+    <div class="container">
+      <div class="antes__grid">
+        <div class="antes__intro reveal">
+          <p class="section-label">Quando procurar</p>
+          <h2 class="section-title">Nem todo pedido de ajuda vem em voz alta.</h2>
+          <p>
+            Às vezes ele aparece como cansaço, irritação, ansiedade, dificuldade de dormir,
+            sensação de estar no automático ou vontade de entender melhor a própria história.
+          </p>
+        </div>
+        <div class="antes__painel reveal" aria-label="Sinais de que a terapia pode ajudar">
+          <article class="antes__item">
+            <span>01</span>
+            <p>Ansiedade, pensamentos acelerados ou sensação constante de alerta.</p>
+          </article>
+          <article class="antes__item">
+            <span>02</span>
+            <p>Dificuldade de impor limites, dizer não ou sustentar escolhas.</p>
+          </article>
+          <article class="antes__item">
+            <span>03</span>
+            <p>Relações que se repetem, machucam ou parecem difíceis de compreender.</p>
+          </article>
+          <article class="antes__item antes__item--gold">
+            <span>04</span>
+            <p>Desejo de se conhecer melhor e viver com mais presença.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="valores" id="valores">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Pilares do cuidado</p>
+        <h2 class="section-title">Como a escuta acontece</h2>
+      </div>
+      <div class="valores__grid">
+        <div class="valor-card reveal">
+          <div class="valor-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 39 C14 31 9 25 9 18 C9 12 13 9 18 9 C21 9 23 11 24 14 C25 11 27 9 30 9 C35 9 39 12 39 18 C39 25 34 31 24 39Z" stroke="#7C9A84" stroke-width="1.6" fill="none"/>
+            </svg>
+          </div>
+          <h3>Acolhimento</h3>
+          <p>Um espaço sem julgamentos, onde a sua história pode ser dita com cuidado.</p>
+        </div>
+        <div class="valor-card reveal">
+          <div class="valor-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 24 C12 14 18 8 24 8 C30 8 36 14 36 24 C36 34 30 40 24 40 C18 40 12 34 12 24Z" stroke="#7C9A84" stroke-width="1.6" fill="none"/>
+              <path d="M17 25 C20 22 28 22 31 25" stroke="#7C9A84" stroke-width="1.4" fill="none"/>
+              <path d="M18 18 H18.5 M29.5 18 H30" stroke="#7C9A84" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Presença</h3>
+          <p>Atendimento atento ao que você traz, ao seu ritmo e às suas possibilidades.</p>
+        </div>
+        <div class="valor-card reveal">
+          <div class="valor-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 34 V16 C14 12 17 9 21 9 H34 V31 C34 35 31 38 27 38 H14Z" stroke="#7C9A84" stroke-width="1.6" fill="none"/>
+              <path d="M20 18 H29 M20 24 H29 M20 30 H25" stroke="#7C9A84" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Ética</h3>
+          <p>Sigilo, responsabilidade profissional e respeito às singularidades de cada pessoa.</p>
+        </div>
+        <div class="valor-card reveal">
+          <div class="valor-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 39 C31 34 36 27 36 19 C36 13 31 9 24 9 C17 9 12 13 12 19 C12 27 17 34 24 39Z" stroke="#7C9A84" stroke-width="1.6" fill="none"/>
+              <path d="M20 22 C22 24 26 24 28 22" stroke="#7C9A84" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Autonomia</h3>
+          <p>O processo terapêutico fortalece escolhas mais conscientes, possíveis e suas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Atendimentos</p>
+        <h2 class="section-title">Modalidades de cuidado</h2>
+      </div>
+      <div class="portfolio__filter reveal">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="individual">Individual</button>
+        <button class="filter-btn" data-filter="relacional">Relações</button>
+        <button class="filter-btn" data-filter="online">Online</button>
+      </div>
+      <div class="portfolio__grid">
+        <div class="portfolio-card reveal" data-category="individual">
+          <div class="portfolio-card__img portfolio-card__img--1">
+            <div class="portfolio-card__overlay">
+              <span>Terapia individual</span>
+              <small>Adultos · Presencial</small>
+              <div class="portfolio-card__editorial">
+                <b>Ansiedade</b><b>Limites</b><b>Autoconhecimento</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-category="relacional">
+          <div class="portfolio-card__img portfolio-card__img--2">
+            <div class="portfolio-card__overlay">
+              <span>Relações e vínculos</span>
+              <small>Casais · Família · Afetos</small>
+              <div class="portfolio-card__editorial">
+                <b>Comunicação</b><b>Conflitos</b><b>Cuidado</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-category="individual">
+          <div class="portfolio-card__img portfolio-card__img--3">
+            <div class="portfolio-card__overlay">
+              <span>Luto e transições</span>
+              <small>Mudanças · Perdas · Recomeços</small>
+              <div class="portfolio-card__editorial">
+                <b>Escuta</b><b>Tempo</b><b>Elaboração</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-category="online">
+          <div class="portfolio-card__img portfolio-card__img--4">
+            <div class="portfolio-card__overlay">
+              <span>Terapia online</span>
+              <small>Atendimento seguro à distância</small>
+              <div class="portfolio-card__editorial">
+                <b>Flexível</b><b>Sigiloso</b><b>Humanizado</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-category="individual">
+          <div class="portfolio-card__img portfolio-card__img--5">
+            <div class="portfolio-card__overlay">
+              <span>Autoestima e identidade</span>
+              <small>História · Corpo · Pertencimento</small>
+              <div class="portfolio-card__editorial">
+                <b>Reconexão</b><b>Confiança</b><b>Sentido</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-category="relacional">
+          <div class="portfolio-card__img portfolio-card__img--6">
+            <div class="portfolio-card__overlay">
+              <span>Orientação parental</span>
+              <small>Famílias · Infância · Rotina</small>
+              <div class="portfolio-card__editorial">
+                <b>Vínculo</b><b>Diálogo</b><b>Limites</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-section__inner reveal">
+        <p class="quote-section__text">
+          "Você não precisa dar conta de tudo em silêncio.<br>
+          <em>Há espaço para respirar.</em>"
+        </p>
+        <span class="quote-section__heart">♥</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="processo" id="processo">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Como funciona</p>
+        <h2 class="section-title">O caminho terapêutico</h2>
+      </div>
+      <div class="processo__steps">
+        <svg class="processo__sketch" viewBox="0 0 120 660" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M60 4 C42 76 78 126 60 196 C42 270 78 328 60 402 C42 480 78 552 60 656" />
+        </svg>
+        <div class="step reveal">
+          <div class="step__number">01</div>
+          <div class="step__content">
+            <h3>Primeiro contato</h3>
+            <p>Você envia uma mensagem contando brevemente o que busca. Retornamos com horários, formato e informações iniciais.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step__number">02</div>
+          <div class="step__content">
+            <h3>Sessão inicial</h3>
+            <p>Um encontro para compreender sua demanda, tirar dúvidas e perceber se o acompanhamento faz sentido para você.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step__number">03</div>
+          <div class="step__content">
+            <h3>Construção do vínculo</h3>
+            <p>A terapia avança com regularidade, escuta e cuidado, respeitando o seu ritmo e a complexidade da sua história.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step__number">04</div>
+          <div class="step__content">
+            <h3>Elaboração</h3>
+            <p>Identificamos padrões, emoções e escolhas possíveis, transformando sofrimento em compreensão e movimento.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step__number">05</div>
+          <div class="step__content">
+            <h3>Continuidade</h3>
+            <p>O processo segue enquanto fizer sentido, com pausas, revisões e novos objetivos construídos junto com você.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="depois" id="depois">
+    <div class="depois__photo" aria-hidden="true"></div>
+    <div class="container">
+      <div class="depois__content reveal">
+        <p class="section-label">Depois de começar</p>
+        <h2 class="section-title">A mudança pode ser silenciosa, mas profunda.</h2>
+        <p>
+          Com o tempo, algumas coisas ficam mais nomeáveis: o que pesa, o que repete,
+          o que precisa de limite e o que merece cuidado. A terapia ajuda a criar esse
+          espaço interno para viver com mais presença.
+        </p>
+        <div class="depois__moments">
+          <span>Mais clareza</span>
+          <span>Mais presença</span>
+          <span>Limites possíveis</span>
+          <span>Escuta de si</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="depoimentos">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Relatos</p>
+        <h2 class="section-title">O que pacientes percebem</h2>
+      </div>
+      <div class="depoimentos__track" id="depoimentosTrack">
+        <div class="depoimento-card">
+          <p>"A terapia me ajudou a entender padrões que eu repetia sem perceber. Hoje consigo me escutar com mais calma."</p>
+          <div class="depoimento-card__author">
+            <span class="depoimento-card__name">Paciente A.</span>
+            <span class="depoimento-card__proj">Terapia individual</span>
+          </div>
+          <div class="depoimento-card__stars">★★★★★</div>
+        </div>
+        <div class="depoimento-card">
+          <p>"Cheguei muito ansiosa e fui encontrando formas de lidar com minhas emoções sem me cobrar tanto."</p>
+          <div class="depoimento-card__author">
+            <span class="depoimento-card__name">Paciente B.</span>
+            <span class="depoimento-card__proj">Ansiedade</span>
+          </div>
+          <div class="depoimento-card__stars">★★★★★</div>
+        </div>
+        <div class="depoimento-card">
+          <p>"O atendimento online foi acolhedor e seguro. Senti presença mesmo à distância."</p>
+          <div class="depoimento-card__author">
+            <span class="depoimento-card__name">Paciente C.</span>
+            <span class="depoimento-card__proj">Terapia online</span>
+          </div>
+          <div class="depoimento-card__stars">★★★★★</div>
+        </div>
+        <div class="depoimento-card">
+          <p>"Aprendi a olhar para meus limites sem culpa. Foi um processo delicado e muito importante."</p>
+          <div class="depoimento-card__author">
+            <span class="depoimento-card__name">Paciente D.</span>
+            <span class="depoimento-card__proj">Autoconhecimento</span>
+          </div>
+          <div class="depoimento-card__stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="depoimentos__dots" id="depoimentosDots"></div>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <div class="container">
+      <div class="contato__grid">
+        <div class="contato__info reveal">
+          <p class="section-label">Agende um horário</p>
+          <h2 class="section-title">Vamos conversar<br>com calma?</h2>
+          <p class="contato__body">
+            Envie uma mensagem para saber horários disponíveis, modalidades de atendimento
+            e tirar dúvidas antes da primeira sessão.
+          </p>
+          <div class="contato__details">
+            <div class="contato__detail">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#7C9A84" stroke-width="1.5" fill="none"/>
+                <circle cx="12" cy="9" r="2.5" stroke="#7C9A84" stroke-width="1.5" fill="none"/>
+              </svg>
+              <span>Campo Mourão, PR — Brasil</span>
+            </div>
+            <div class="contato__detail">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 013.07 3.05 2 2 0 015.07 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z" stroke="#7C9A84" stroke-width="1.5" fill="none"/>
+              </svg>
+              <span>(44) 9 9999-9999</span>
+            </div>
+            <div class="contato__detail">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#7C9A84" stroke-width="1.5" fill="none"/>
+                <polyline points="22,6 12,13 2,6" stroke="#7C9A84" stroke-width="1.5" fill="none"/>
+              </svg>
+              <span>contato@psicologiarosetto.com.br</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contato__form reveal" id="contatoForm">
+          <div class="contato__selector form-group--full" aria-label="Escolha o tipo de apoio">
+            <p class="contato__selector-label">Como podemos ajudar?</p>
+            <div class="contato__selector-options">
+              <button type="button" class="project-chip active" data-project="ansiedade" data-tipo="ansiedade">Ansiedade</button>
+              <button type="button" class="project-chip" data-project="autoestima" data-tipo="autoestima">Autoestima</button>
+              <button type="button" class="project-chip" data-project="relacionamentos" data-tipo="relacionamentos">Relacionamentos</button>
+            </div>
+            <p class="contato__selector-note" id="projectGuideNote">
+              Conte brevemente o que você tem sentido. Não precisa organizar tudo antes de pedir ajuda.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(44) 9 0000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="tipo">Tema principal</label>
+            <select id="tipo" name="tipo">
+              <option value="">Selecione...</option>
+              <option value="ansiedade">Ansiedade</option>
+              <option value="autoestima">Autoestima</option>
+              <option value="relacionamentos">Relacionamentos</option>
+              <option value="luto">Luto ou transição</option>
+              <option value="online">Terapia online</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group form-group--full">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte brevemente o que você busca neste momento..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary form-group--full">Enviar mensagem ♥</button>
+          <div class="form-success" id="formSuccess">
+            Mensagem enviada com sucesso! Em breve entraremos em contato. ♥
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__submarca" aria-hidden="true">
+            <svg viewBox="0 0 130 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="65" cy="62" r="40" stroke="#7C9A84" stroke-width="1.4" fill="none" opacity="0.35"/>
+              <path d="M42 80 C50 100 80 100 88 80" stroke="#7C9A84" stroke-width="1" fill="none" opacity="0.45"/>
+              <text x="65" y="110" text-anchor="middle" font-family="'Cormorant Garamond','Georgia',serif" font-size="88" font-weight="400" fill="#FDF8EE" opacity="0.72">R</text>
+              <text x="65" y="142" text-anchor="middle" font-size="10" fill="#7C9A84">♥</text>
+            </svg>
+          </div>
+          <span class="footer__logo">ROSETTO</span>
+          <span class="footer__logo-sub">PSICOLOGIA</span>
+          <p>escutar · acolher · elaborar</p>
+        </div>
+        <div class="footer__links">
+          <h4>Navegação</h4>
+          <a href="#sobre">Sobre</a>
+          <a href="#valores">Cuidado</a>
+          <a href="#portfolio">Atendimentos</a>
+          <a href="#processo">Processo</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div class="footer__social">
+          <h4>Redes sociais</h4>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="WhatsApp">WhatsApp</a>
+          <a href="#" aria-label="Doctoralia">Doctoralia</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>♥ Psicologia Rosetto — atendimento psicológico com ética, presença e acolhimento.</p>
+        <p>© 2026 · Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

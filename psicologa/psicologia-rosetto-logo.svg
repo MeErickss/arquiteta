@@ -1,0 +1,30 @@
+<svg width="900" height="420" viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="420" fill="transparent"/>
+  <g opacity="0.95">
+    <circle cx="450" cy="96" r="58" stroke="#7C9A84" stroke-width="3" opacity="0.38"/>
+    <path d="M413 98 C424 120 476 120 487 98" stroke="#7C9A84" stroke-width="3" stroke-linecap="round"/>
+    <path d="M421 77 C430 69 441 69 450 77" stroke="#2F3A34" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M450 77 C459 69 470 69 479 77" stroke="#2F3A34" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M450 166 C423 147 400 126 400 97 C400 74 416 59 437 59 C445 59 453 63 458 71 C463 63 473 59 483 59 C504 59 520 74 520 97 C520 126 485 147 450 166Z" fill="#DDE9D7" stroke="#7C9A84" stroke-width="3.2"/>
+    <path d="M450 49 C440 37 426 32 411 33" stroke="#7C9A84" stroke-width="2" stroke-linecap="round" opacity="0.42"/>
+    <path d="M450 49 C460 37 474 32 489 33" stroke="#7C9A84" stroke-width="2" stroke-linecap="round" opacity="0.42"/>
+  </g>
+
+  <text x="450" y="284"
+        text-anchor="middle"
+        font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="122"
+        font-weight="400"
+        letter-spacing="16"
+        fill="#2F3A34">ROSETTO</text>
+
+  <line x1="246" y1="320" x2="654" y2="320" stroke="#7C9A84" stroke-width="1.4" opacity="0.42"/>
+
+  <text x="450" y="370"
+        text-anchor="middle"
+        font-family="'Montserrat', Arial, sans-serif"
+        font-size="27"
+        font-weight="500"
+        letter-spacing="15"
+        fill="#7C9A84">PSICOLOGIA</text>
+</svg>
